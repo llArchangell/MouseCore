@@ -1,0 +1,13 @@
+{
+    "values":[
+        "#crpg:floors",
+        "#air",
+        "ladder",
+        "#beds",
+        "#trapdoors",
+        "torch",
+        "brewing_stand",
+        "dirt",
+        "bedrock"
+    ]
+}

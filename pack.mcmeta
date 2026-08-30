@@ -1,0 +1,14 @@
+{
+    "pack": {
+        "description": "DoomCraftEngine",
+        "min_format": [
+            118,
+            1
+        ],
+        "max_format": [
+            118,
+            1
+        ],
+        "pack_format": 118
+    }
+}

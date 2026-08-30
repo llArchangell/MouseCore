@@ -1,0 +1,16 @@
+{
+  "terms": [
+    {
+      "entity": "this",
+      "predicate": {
+        "minecraft:type_specific/player": {
+          "input": {
+            "left": true
+          }
+        }
+      },
+      "type": "minecraft:entity_properties"
+    }
+  ],
+  "type": "minecraft:any_of"
+}
