@@ -26,7 +26,7 @@ transformation:\
     \
 }
 
-data modify storage mc:data input.mouse set value {x:0,y:0,z:.5,mode:"field",look_angle:10}
+data modify storage mc:data input.mouse set value {x:0,y:0,z:.5}
 
 ##get new_rot - old_rot
 execute store result score #mc.input.rot_x mc.data run data get entity @s Rotation[0] 100

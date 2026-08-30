@@ -1,5 +1,5 @@
 # ##tp vehicle on itself to fix its rotation
-execute on vehicle at @s run tp @s ~ ~ ~
+execute on vehicle at @s run tp @s ~ ~ ~ ~ ~
 
 # ##check mouse release
 # execute unless predicate mc:inputs/left_click if score #mc.mouse.left_click mc.data matches 1.. run function mc:player/inputs/mouse/inputs/left_click/release
