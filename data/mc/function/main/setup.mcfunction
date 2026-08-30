@@ -18,8 +18,8 @@ transformation:\
     {\
     left_rotation:[0f,0f,0f,1f],\
     right_rotation:[0f,0f,0f,1f],\
-    scale:[.25f,.25f,.25f],\
-    translation:[-.0025f,-.0025f,0f]\
+    scale:[.125f,.125f,.125f],\
+    translation:[-.00125f,-.00125f,0f]\
     },\
     \
 }
