@@ -10,8 +10,8 @@ scoreboard players operation #mc.mouse.diff_x mc.data %= #36000 mc.data
 scoreboard players remove #mc.mouse.diff_x mc.data 18000
 
 #get mouse strength
-scoreboard players operation #mc.mouse.strength mc.data = #mc.mouse.diff_x mc.data
-execute if score #mc.mouse.strength mc.data matches ..-1 run scoreboard players operation #mc.mouse.strength mc.data *= #-1 mc.data
+scoreboard players operation #mc.mouse.strength_x mc.data = #mc.mouse.diff_x mc.data
+execute if score #mc.mouse.strength_x mc.data matches ..-1 run scoreboard players operation #mc.mouse.strength_x mc.data *= #-1 mc.data
 
-execute if score #mc.mouse.diff_x mc.data matches ..-1 run return run say left
-execute if score #mc.mouse.diff_x mc.data matches 1.. run return run say right
+execute if score #mc.mouse.diff_x mc.data matches ..-1 run return run function mc:main/inputs/update_pos/directions/left/
+execute if score #mc.mouse.diff_x mc.data matches 1.. run return run function mc:main/inputs/update_pos/directions/right/

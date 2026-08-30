@@ -2,8 +2,8 @@
 execute on vehicle at @s run tp @s ~ ~ ~
 
 # ##check mouse release
-# execute unless predicate mc:inputs/left_click if score #mc.mouse.left_click_count mc.data matches 1.. run function mc:player/inputs/mouse/inputs/left_click/release
-# execute unless predicate mc:inputs/right_click if score #mc.mouse.right_click_count mc.data matches 1.. run function mc:player/inputs/mouse/inputs/right_click/release
+# execute unless predicate mc:inputs/left_click if score #mc.mouse.left_click mc.data matches 1.. run function mc:player/inputs/mouse/inputs/left_click/release
+# execute unless predicate mc:inputs/right_click if score #mc.mouse.right_click mc.data matches 1.. run function mc:player/inputs/mouse/inputs/right_click/release
 
 ##get player_rot
 execute on vehicle store result score #mc.mouse.old_rot_x mc.data run data get entity @s Rotation[0] 100
@@ -20,6 +20,8 @@ execute unless score #mc.mouse.rot_y mc.data = #mc.mouse.old_rot_y mc.data run f
 ##update cursor + get gui elements
 execute on vehicle at @s positioned ^ ^ ^ run function mc:main/inputs/check_interactions/ with storage mc:data input.mouse
 execute on vehicle at @s on passengers run rotate @s ~ ~
+
+title @s actionbar [{text:"[X: ",color:green},{score:{name:"#mc.mouse.x",objective:"mc.data"}},{text:" ] [Y: ",color:green},{score:{name:"#mc.mouse.y",objective:"mc.data"}},{text:" ]",color:green}]
 
 # ##check mouse inputs
 # execute if predicate mc:inputs/left_click run return run function mc:player/inputs/mouse/inputs/left_click/

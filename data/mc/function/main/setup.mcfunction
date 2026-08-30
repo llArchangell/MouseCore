@@ -20,13 +20,13 @@ transformation:\
     {\
     left_rotation:[0f,0f,0f,1f],\
     right_rotation:[0f,0f,0f,1f],\
-    scale:[.15f,.15f,.15f],\
-    translation:[0.075f,-.065f,0f]\
+    scale:[.03f,.03f,.03f],\
+    translation:[0.015f,-.013f,0f]\
     },\
     \
 }
 
-data modify storage mc:data input.mouse set value {x:0,y:0,z:2.5,mode:"field",look_angle:10}
+data modify storage mc:data input.mouse set value {x:0,y:0,z:.5,mode:"field",look_angle:10}
 
 ##get new_rot - old_rot
 execute store result score #mc.input.rot_x mc.data run data get entity @s Rotation[0] 100
