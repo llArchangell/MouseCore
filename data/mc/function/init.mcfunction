@@ -1,6 +1,7 @@
 ##scores
 
 scoreboard objectives add mc.data dummy
+scoreboard objectives add mc.gui_layer dummy
 
 
 

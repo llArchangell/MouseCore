@@ -1,0 +1,29 @@
+##get x origin
+scoreboard players operation #mc.temp.gui mc.data = #mc.temp.gui.min_x mc.data
+$scoreboard players set #mc.temp.gui.x_offset mc.data $(x)
+scoreboard players operation #mc.temp.gui mc.data += #mc.temp.gui.x_offset mc.data
+
+##get x min,max
+scoreboard players operation #mc.temp.gui.min_x mc.data = #mc.temp.gui mc.data
+execute if score #mc.mouse.x mc.data > #mc.temp.gui.min_x mc.data run return run function mc:main/inputs/check_interactions/gui/check_menu/next_interaction
+
+scoreboard players operation #mc.temp.gui.max_x mc.data = #mc.temp.gui mc.data
+$scoreboard players remove #mc.temp.gui.max_x mc.data $(width)
+execute if score #mc.mouse.x mc.data < #mc.temp.gui.max_x mc.data run return run function mc:main/inputs/check_interactions/gui/check_menu/next_interaction
+
+
+##get y origin
+scoreboard players operation #mc.temp.gui mc.data = #mc.temp.gui.min_y mc.data
+$scoreboard players set #mc.temp.gui.y_offset mc.data $(y)
+scoreboard players operation #mc.temp.gui mc.data += #mc.temp.gui.y_offset mc.data
+
+##get x min,max
+scoreboard players operation #mc.temp.gui.min_y mc.data = #mc.temp.gui mc.data
+execute if score #mc.mouse.y mc.data < #mc.temp.gui.min_y mc.data run return run function mc:main/inputs/check_interactions/gui/check_menu/next_interaction
+
+scoreboard players operation #mc.temp.gui.max_y mc.data = #mc.temp.gui mc.data
+$scoreboard players add #mc.temp.gui.max_y mc.data $(width)
+execute if score #mc.mouse.y mc.data > #mc.temp.gui.max_y mc.data run return run function mc:main/inputs/check_interactions/gui/check_menu/next_interaction
+
+##set as current selected interaction
+data modify entity 3c69601e-49ad-44ce-b75b-44196417ede6 item.id set value "golden_sword"

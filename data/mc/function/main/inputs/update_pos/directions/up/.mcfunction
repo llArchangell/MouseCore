@@ -5,6 +5,13 @@ scoreboard players operation #mc.mouse.strength_y mc.data /= #1000 mc.data
 ##set screen size
 scoreboard players set #mc.gui.screen_bounds mc.data 350
 
+##check drag
+scoreboard players set #mc.mouse.lock mc.data 0
+execute as @n[type=text_display,tag=mc.gui.dragging,limit=1,distance=..5] run function mc:main/inputs/update_pos/directions/up/drag with entity @s data
+execute if score #mc.mouse.lock mc.data matches 1 run return fail
+
+scoreboard players set #mc.gui.screen_bounds mc.data 350
+
 ##get new pos
 scoreboard players operation #mc.mouse.y mc.data += #mc.mouse.strength_y mc.data
 scoreboard players operation #mc.mouse.y mc.data = #mc.mouse.y mc.data
