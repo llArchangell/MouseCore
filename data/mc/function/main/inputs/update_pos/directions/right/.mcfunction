@@ -3,7 +3,7 @@ scoreboard players operation #mc.mouse.strength_x mc.data *= #mc.sensibility mc.
 scoreboard players operation #mc.mouse.strength_x mc.data /= #1000 mc.data
 
 ##set screen size
-scoreboard players set #mc.gui.screen_bounds mc.data -622
+scoreboard players set #mc.gui.screen_bounds mc.data -623
 
 ##check drag
 scoreboard players set #mc.mouse.lock mc.data 0
@@ -11,7 +11,6 @@ execute as @n[type=text_display,tag=mc.gui.dragging,limit=1,distance=..5] run re
 
 ##get new pos
 scoreboard players operation #mc.mouse.x mc.data -= #mc.mouse.strength_x mc.data
-scoreboard players operation #mc.mouse.x mc.data = #mc.mouse.x mc.data
 
 ##check if out of bounds
 execute if score #mc.mouse.x mc.data <= #mc.gui.screen_bounds mc.data run scoreboard players operation #mc.mouse.x mc.data = #mc.gui.screen_bounds mc.data

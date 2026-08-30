@@ -11,7 +11,6 @@ execute as @n[type=text_display,tag=mc.gui.dragging,limit=1,distance=..5] run re
 
 ##get new pos
 scoreboard players operation #mc.mouse.y mc.data += #mc.mouse.strength_y mc.data
-scoreboard players operation #mc.mouse.y mc.data = #mc.mouse.y mc.data
 
 ##check if out of bounds
 execute if score #mc.mouse.y mc.data >= #mc.gui.screen_bounds mc.data run scoreboard players operation #mc.mouse.y mc.data = #mc.gui.screen_bounds mc.data
