@@ -26,4 +26,5 @@ $scoreboard players add #mc.temp.gui.max_y mc.data $(width)
 execute if score #mc.mouse.y mc.data > #mc.temp.gui.max_y mc.data run return run function mc:main/inputs/check_interactions/gui/check_menu/next_interaction
 
 ##set as current selected interaction
-data modify entity 3c69601e-49ad-44ce-b75b-44196417ede6 item.id set value "golden_sword"
+data modify entity 3c69601e-49ad-44ce-b75b-44196417ede6 text.color set value "gold"
+

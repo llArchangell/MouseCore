@@ -1,2 +1,2 @@
 scoreboard players add #mc.right_click mc.data 1
-execute if score #mc.right_click mc.data matches 1 as @n[type=text_display,tag=mc.gui.current,limit=1,distance=..5] run function mc:main/inputs/right_click/set_drag
+execute if score #mc.right_click mc.data matches 1 as @n[type=text_display,tag=mc.gui.current,limit=1,distance=..5] run function mc:main/inputs/update_pos/set_drag

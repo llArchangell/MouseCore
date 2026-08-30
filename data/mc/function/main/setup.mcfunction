@@ -8,20 +8,18 @@ execute as @n[tag=mc.input.main] rotated as @n[type=player] run rotate @s ~ 55
 ride @s mount a1baddfe-1630-42e9-9d9c-2ef228025af8 
 
 kill 3c69601e-49ad-44ce-b75b-44196417ede6
-summon item_display ~ ~ ~ {\
+summon text_display ~ ~ ~ {\
 UUID:[I;1013538846,1236092110,-1218755559,1679289830],\
-item:\
-    {\
-        id:iron_sword,\
-         \
-        },\
-teleport_duration:1,billboard:center,\
+text:{text:"\uE000",font:"mc:ui/background_generic",color:white},\
+teleport_duration:1,\
+billboard:center,\
+background:0,\
 transformation:\
     {\
     left_rotation:[0f,0f,0f,1f],\
     right_rotation:[0f,0f,0f,1f],\
-    scale:[.03f,.03f,.03f],\
-    translation:[0.015f,-.013f,0f]\
+    scale:[.25f,.25f,.25f],\
+    translation:[-.0025f,-.0025f,0f]\
     },\
     \
 }
