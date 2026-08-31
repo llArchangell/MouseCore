@@ -27,4 +27,4 @@ execute if score #mc.mouse.y mc.data > #mc.temp.gui.max_y mc.data run return run
 
 ##set as current selected interaction
 data modify entity 3c69601e-49ad-44ce-b75b-44196417ede6 text.color set value "gold"
-
+scoreboard players set #mc.looking_interaction mc.data 1
