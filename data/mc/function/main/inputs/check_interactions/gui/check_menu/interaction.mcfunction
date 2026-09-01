@@ -22,9 +22,11 @@ scoreboard players operation #mc.temp.gui.min_y mc.data = #mc.temp.gui mc.data
 execute if score #mc.mouse.y mc.data < #mc.temp.gui.min_y mc.data run return run function mc:main/inputs/check_interactions/gui/check_menu/next_interaction
 
 scoreboard players operation #mc.temp.gui.max_y mc.data = #mc.temp.gui mc.data
-$scoreboard players add #mc.temp.gui.max_y mc.data $(width)
+$scoreboard players add #mc.temp.gui.max_y mc.data $(height)
 execute if score #mc.mouse.y mc.data > #mc.temp.gui.max_y mc.data run return run function mc:main/inputs/check_interactions/gui/check_menu/next_interaction
 
 ##set as current selected interaction
+$title @a[limit=1,tag=mc.dev] actionbar {text:"[Found interaction box] Action: $(action)",color:gold}
 data modify entity 3c69601e-49ad-44ce-b75b-44196417ede6 text.color set value "gold"
+execute on passengers on passengers run data modify entity @s text.color set value gold
 scoreboard players set #mc.looking_interaction mc.data 1
