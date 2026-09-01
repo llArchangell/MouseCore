@@ -1,6 +1,9 @@
+##temp kill so we always with one menu for now
+execute as @n[tag=mc.gui] on passengers on passengers run kill @s
 execute as @n[tag=mc.gui] on passengers run kill @s
 kill @n[tag=mc.gui]
 
+##summon entity / set menu data
 execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
 {\
     text:{text:"\uE000",font:"mc:ui/background_generic",color:black},\
@@ -28,7 +31,7 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         x_offset: 0 ,\
         y_offset: 0 ,\
         interaction: [\
-                {x:-25,y:50,text_x:0,text_y:0, width:25,height:25,depth:5,label_name:"template",action:template},\
+                            {text:{x:-49,y:50,depth:6,display: "template",scale:"050"}, x:-25,y:50, width:50,height:20,depth:5,action:test},\
                      ],\
         },\
     \
@@ -50,5 +53,5 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         ]\
 }
 
-
+##init setup functions
 execute as @n[type=text_display,tag=mc.gui.setup,limit=1,distance=..5] at @s run function mc:main/gui/setup/ with entity @s data

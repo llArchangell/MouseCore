@@ -3,7 +3,7 @@ scoreboard players operation #mc.mouse.strength_x mc.data *= #mc.sensibility mc.
 scoreboard players operation #mc.mouse.strength_x mc.data /= #1000 mc.data
 
 ##set screen size
-scoreboard players set #mc.gui.screen_bounds mc.data 622
+scoreboard players set #mc.gui.screen_bounds mc.data 623
 
 ##check drag
 scoreboard players set #mc.mouse.lock mc.data 0

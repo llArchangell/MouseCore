@@ -1,11 +1,15 @@
+##kill interactions boxes + texts
+execute on passengers on passengers run kill @s
 execute on passengers run kill @s
 
+##set layer + window size
 $scoreboard players set @s mc.gui_layer $(layer)
 function mc:main/gui/setup/set_size with entity @s data
 
+##create interactions
 data modify storage mc:data temp.list set value []
 data modify storage mc:data temp.list set from entity @s data.interaction
-execute if data storage mc:data temp.list[0] run function mc:main/gui/setup/load_interactions/
+execute if data storage mc:data temp.list[0] run function mc:main/gui/setup/load_interactions/ with storage mc:data temp.list[0].text
 
-
-tellraw @a {text:"[Gui setup completed...]",color:green}
+##debug
+tellraw @a[tag=mc.dev] {text:"[Gui setup completed...]",color:green}
