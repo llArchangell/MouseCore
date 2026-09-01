@@ -20,6 +20,7 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         origin_y: 0 ,\
         \
         layer: 0 ,\
+        depth: 0,\
         \
         width: 100 ,\
         height: 100 ,\
@@ -27,8 +28,8 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         x_offset: 0 ,\
         y_offset: 0 ,\
         interaction: [\
-                {x:0,y:0,text_x:0,text_y:0, width:10,height:10,depth:1,label_name:"template",action:template},\
-                ],\
+                {x:-25,y:50,text_x:0,text_y:0, width:25,height:25,depth:5,label_name:"template",action:template},\
+                     ],\
         },\
     \
     view_range: 9999f ,\
@@ -50,4 +51,4 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
 }
 
 
-execute as @n[type=text_display,tag=mc.gui.setup,limit=1,distance=..5] run function mc:main/gui/setup/ with entity @s data
+execute as @n[type=text_display,tag=mc.gui.setup,limit=1,distance=..5] at @s run function mc:main/gui/setup/ with entity @s data

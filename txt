@@ -1,18 +1,2 @@
-
-create menu = execute on vehicle at @s run function lce:main/gui/drag_template/summon with storage lce:data player.input.mouse
-
-
-
-
-
-gui level editor
-    create gui
-        - set base menu height * width = hold rc, set first pos and move around the mouse to set the desired size
-    
-    create interactions
-        - summon temporary text displays holding your interaction values, tp them around to where you want them on the screen, save their internal mouse values
-            pos: use rc + drag
-            action: internal gui, set action function
-            text_pos: toggle gui, set text_pos mode, use rc + drag
-
-
+###to do
+seperate text as child of interaction box

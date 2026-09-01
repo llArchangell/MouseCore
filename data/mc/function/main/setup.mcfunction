@@ -19,7 +19,7 @@ transformation:\
     left_rotation:[0f,0f,0f,1f],\
     right_rotation:[0f,0f,0f,1f],\
     scale:[.125f,.125f,.125f],\
-    translation:[-.00125f,-.00125f,0f]\
+    translation:[-.00125f,-.00125f,0.0009f]\
     },\
     \
 }
