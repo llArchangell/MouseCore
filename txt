@@ -1,2 +1,8 @@
 ###to do
-seperate text as child of interaction box
+interaction types: 
+
+slider
+hover
+double rc / lc
+toggle
+edge

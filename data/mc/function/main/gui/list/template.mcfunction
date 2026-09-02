@@ -31,7 +31,11 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         x_offset: 0 ,\
         y_offset: 0 ,\
         interaction: [\
-                            {text:{x:-49,y:50,depth:6,display: "template",scale:"050"}, x:-25,y:50, width:50,height:20,depth:5,action:test},\
+                            {\
+                            text:{x:-49,y:50,depth:6,display: "template",scale:"050"},\
+                            x:-25,y:50, width:50,height:20,depth:5,\
+                            action:[{type:"button",action:test,trigger:{right_release:true}}] \
+                            },\
                      ],\
         },\
     \
