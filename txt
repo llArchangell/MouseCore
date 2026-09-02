@@ -1,7 +1,8 @@
 ###to do
 interaction types: 
 
+edge
 slider
+
 double rc / lc
 toggle
-edge

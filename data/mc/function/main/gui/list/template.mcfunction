@@ -45,7 +45,7 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
     view_range: 9999f ,\
     billboard: "center" ,\
     background: 0 ,\
-    teleport_duration: 1 ,\
+    teleport_duration: 0 ,\
     interpolation_duration: 0 ,\
     transformation:\
     {\

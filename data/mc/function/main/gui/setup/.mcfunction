@@ -2,6 +2,8 @@
 execute on passengers on passengers run kill @s
 execute on passengers run kill @s
 
+data modify entity @s teleport_duration set value 1
+
 ##set layer + window size
 $scoreboard players set @s mc.gui_layer $(layer)
 function mc:main/gui/setup/set_size with entity @s data

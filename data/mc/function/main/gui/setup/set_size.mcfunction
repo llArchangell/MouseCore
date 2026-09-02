@@ -1,8 +1,12 @@
+
 ##unique id
 scoreboard players operation @s mc.data = #mc.interaction_id mc.data
 
 ##set if hover
 execute if score #mc.gui.setting_hover mc.data matches 1 run function mc:main/inputs/trigger/hover/set
+
+data modify entity @s teleport_duration set value 1
+
 ##set size
 $data modify entity @s transformation.translation[2] set value 0.000$(depth)f
 
