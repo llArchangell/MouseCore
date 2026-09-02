@@ -30,3 +30,7 @@ data modify entity 3c69601e-49ad-44ce-b75b-44196417ede6 text.color set value "go
 execute on passengers on passengers run data modify entity @s text.color set value gold
 scoreboard players set #mc.looking_interaction mc.data 1
 data modify storage mc:data temp_current_action set from storage mc:data temp.list[0].action
+
+##hover set
+execute if data storage mc:data temp_current_action[{trigger:{hover:1b}}] run function mc:main/inputs/trigger/hover/
+
