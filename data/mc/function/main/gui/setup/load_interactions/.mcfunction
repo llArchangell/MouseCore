@@ -33,6 +33,7 @@ $summon text_display ~ ~ ~ \
         ]\
     }
 
+scoreboard players add #mc.interaction_id mc.data 1
 execute as @n[type=text_display,limit=1,distance=..5,tag=mc.gui.interaction_setup] run function mc:main/gui/setup/set_size with storage mc:data temp.list[0]
 
 data remove storage mc:data temp.list[0]
