@@ -22,6 +22,8 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         origin_x: 0 ,\
         origin_y: 0 ,\
         \
+        edge_margin: 10,\
+        \
         layer: 0 ,\
         depth: 0,\
         \
@@ -33,9 +35,10 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         interaction: [\
                             {\
                             text:{x:-49,y:50,depth:6,display: "template",scale:"050"},\
-                            x:-25,y:50, width:50,height:20,depth:5,\
+                            x:-25,y:50, width:50,height:20,depth:5,edge_margin: 5,\
                             action:[\
                                 {type:"button",action:test,trigger:{right_release:true}},\
+                                {type:"button",action:test,trigger:{edge:true}},\
                                 {trigger:{hover:true},x:-13,y:75,width:0,height:0,depth:6,type:context_box,text:{x:-50,y:75,depth:7,display: "template hover text",scale:"030"}},\
                                 ] \
                             },\

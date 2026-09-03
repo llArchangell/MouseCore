@@ -1,4 +1,5 @@
 ##get x origin
+scoreboard players operation #mc.temp.gui.origin_x mc.data = #mc.temp.gui.min_x mc.data
 scoreboard players operation #mc.temp.gui mc.data = #mc.temp.gui.min_x mc.data
 $scoreboard players set #mc.temp.gui.x_offset mc.data $(x)
 scoreboard players operation #mc.temp.gui mc.data += #mc.temp.gui.x_offset mc.data
@@ -13,6 +14,7 @@ execute if score #mc.mouse.x mc.data < #mc.temp.gui.max_x mc.data run return run
 
 
 ##get y origin
+scoreboard players operation #mc.temp.gui.origin_y mc.data = #mc.temp.gui.min_y mc.data
 scoreboard players operation #mc.temp.gui mc.data = #mc.temp.gui.min_y mc.data
 $scoreboard players set #mc.temp.gui.y_offset mc.data $(y)
 scoreboard players operation #mc.temp.gui mc.data += #mc.temp.gui.y_offset mc.data
@@ -31,6 +33,6 @@ execute on passengers on passengers run data modify entity @s[tag=!mc.gui.hover]
 scoreboard players set #mc.looking_interaction mc.data 1
 data modify storage mc:data temp_current_action set from storage mc:data temp.list[0].action
 
-##hover set
+##triggers = hover, edge,
 execute if data storage mc:data temp_current_action[{trigger:{hover:1b}}] run function mc:main/inputs/trigger/hover/
-
+execute if data storage mc:data temp_current_action[{trigger:{edge:1b}}] run function mc:main/inputs/trigger/edge/interaction with storage mc:data temp.list[0]

@@ -23,3 +23,5 @@ execute if score #mc.mouse.y mc.data > #mc.temp.gui.max_y mc.data run return fai
 title @a[limit=1,tag=mc.dev] actionbar {text:"[Found menu]",color:gold}
 tag @s add mc.gui.current
 data modify entity 3c69601e-49ad-44ce-b75b-44196417ede6 text.color set value "aqua"
+
+ 
