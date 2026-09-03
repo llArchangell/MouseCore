@@ -1,4 +1,3 @@
-
 $scoreboard players set #mc.temp.gui mc.data $(x)
 scoreboard players operation #mc.temp.gui.min_x mc.data = #mc.temp.gui.origin_x mc.data
 scoreboard players operation #mc.temp.gui.min_x mc.data += #mc.temp.gui mc.data

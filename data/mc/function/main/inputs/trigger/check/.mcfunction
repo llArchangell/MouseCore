@@ -1,4 +1,5 @@
-$execute if data storage mc:data current_action[0].trigger{$(input):true} run say accepted_input=$(trigger) || type=$(type) || action: $(action)
+
+$execute if data storage mc:data current_action[0].trigger{$(input):true} run function mc:main/inputs/trigger/check/conditions with storage mc:data current_action[0]
 
 data remove storage mc:data current_action[0]
 $data modify storage mc:data current_action[0].input set value $(input)

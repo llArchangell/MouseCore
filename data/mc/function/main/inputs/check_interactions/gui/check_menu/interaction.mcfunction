@@ -31,8 +31,12 @@ execute if score #mc.mouse.y mc.data > #mc.temp.gui.max_y mc.data run return run
 data modify entity 3c69601e-49ad-44ce-b75b-44196417ede6 text.color set value "gold"
 execute on passengers on passengers run data modify entity @s[tag=!mc.gui.hover] text.color set value gold
 scoreboard players set #mc.looking_interaction mc.data 1
-data modify storage mc:data temp_current_action set from storage mc:data temp.list[0].action
+data modify storage mc:data temp_current_action.actions set from storage mc:data temp.list[0].action
+data modify storage mc:data temp_current_action.id set from storage mc:data temp.list[0].id
+
+data modify storage mc:data gui.active_types.button set value true
+data modify storage mc:data gui.active_types.slider set value true
 
 ##triggers = hover, edge,
-execute if data storage mc:data temp_current_action[{trigger:{hover:1b}}] run function mc:main/inputs/trigger/hover/
-execute if data storage mc:data temp_current_action[{trigger:{edge:1b}}] run function mc:main/inputs/trigger/edge/interaction with storage mc:data temp.list[0]
+execute if data storage mc:data temp_current_action[{type:"hover"}] run function mc:main/inputs/trigger/hover/
+execute if data storage mc:data temp_current_action[{type:"edge"}] run function mc:main/inputs/trigger/edge/interaction with storage mc:data temp.list[0]

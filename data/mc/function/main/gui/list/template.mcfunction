@@ -35,11 +35,12 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         interaction: [\
                             {\
                             text:{x:-49,y:50,depth:6,display: "template",scale:"050"},\
-                            x:-25,y:50, width:50,height:20,depth:5,edge_margin: 5,\
+                            id: 1, x:0,y:50, width:50,height:20,depth:5,edge_margin: 5,\
                             action:[\
-                                {type:"button",action:test,trigger:{right_release:true}},\
-                                {type:"button",action:test,trigger:{edge:true}},\
-                                {trigger:{hover:true},x:-13,y:75,width:0,height:0,depth:6,type:context_box,text:{x:-50,y:75,depth:7,display: "template hover text",scale:"030"}},\
+                                {trigger:{left_release:true}, type: "button", action: template},\
+                                {trigger:{right_hold:true},   type: "edge", action: resize},\
+                                {trigger:{left_hold:true},    type: "slider",action: test, direction:{left:true,right:true,down:true,up:true}},\
+                                {trigger:{},                  type: "hover", x:-13,y:75,width:0,height:0,depth:6,text:{x:-50,y:75,depth:7,display: "template hover text",scale:"030"}},\
                                 ] \
                             },\
                      ],\
@@ -65,3 +66,4 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
 
 ##init setup functions
 execute as @n[type=text_display,tag=mc.gui.setup,limit=1,distance=..5] at @s run function mc:main/gui/setup/ with entity @s data
+

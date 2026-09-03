@@ -1,9 +1,6 @@
 # ##tp vehicle on itself to fix its rotation
 execute on vehicle at @s run tp @s ~ ~ ~ ~ ~
 
-# ##check mouse release
-execute unless predicate mc:inputs/left_click if score #mc.left_click mc.data matches 1.. run function mc:main/inputs/left_click/release
-execute unless predicate mc:inputs/right_click if score #mc.right_click mc.data matches 1.. run function mc:main/inputs/right_click/release
 
 ##get player_rot
 execute on vehicle store result score #mc.mouse.old_rot_x mc.data run data get entity @s Rotation[0] 100
@@ -26,3 +23,7 @@ execute on vehicle at @s on passengers run rotate @s ~ ~
 # ##check mouse inputs
 execute if predicate mc:inputs/left_click run return run function mc:main/inputs/left_click/hold
 execute if predicate mc:inputs/right_click run return run function mc:main/inputs/right_click/hold
+
+# ##check mouse release
+execute unless predicate mc:inputs/left_click if score #mc.left_click mc.data matches 1.. run function mc:main/inputs/left_click/release
+execute unless predicate mc:inputs/right_click if score #mc.right_click mc.data matches 1.. run function mc:main/inputs/right_click/release

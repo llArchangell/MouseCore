@@ -8,6 +8,7 @@ scoreboard players set #mc.gui.screen_bounds mc.data -350
 ##check drag
 scoreboard players set #mc.mouse.lock mc.data 0
 execute as @n[type=text_display,tag=mc.gui.dragging,limit=1,distance=..5] run return run function mc:main/inputs/update_pos/directions/down/drag with entity @s data
+execute as @n[type=text_display,tag=mc.gui.sliding,limit=1,distance=..5] run return run function mc:main/inputs/update_pos/directions/down/slide with entity @s data
 
 ##get new pos
 scoreboard players operation #mc.mouse.y mc.data -= #mc.mouse.strength_y mc.data

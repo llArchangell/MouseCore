@@ -1,1 +1,1 @@
-# $say on_edge: $(side)
+data modify storage mc:data gui.active_types.edge set value true
