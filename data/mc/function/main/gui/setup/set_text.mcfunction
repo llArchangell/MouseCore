@@ -1,4 +1,3 @@
-data modify entity @s teleport_duration set value 1
 
 $data modify entity @s transformation.translation[2] set value 0.000$(depth)f
 
