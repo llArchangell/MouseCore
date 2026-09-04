@@ -1,7 +1,5 @@
 ###to do
 interaction types: 
 
-slider
-
 double rc / lc
 toggle
