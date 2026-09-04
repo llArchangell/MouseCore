@@ -1,4 +1,3 @@
-$say $(x)
 ##unique id
 $scoreboard players set @s mc.data $(id)
 
