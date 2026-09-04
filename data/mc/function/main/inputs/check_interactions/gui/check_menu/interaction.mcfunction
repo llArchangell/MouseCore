@@ -39,4 +39,7 @@ data modify storage mc:data gui.active_types.slider set value true
 
 ##triggers = hover, edge,
 execute if data storage mc:data temp_current_action.actions[{type:"hover"}] run function mc:main/inputs/trigger/hover/
+
+data modify storage mc:data temp.list set value []
+data modify storage mc:data temp.list append from storage mc:data temp_current_action.actions[{type:"edge"}]
 execute if data storage mc:data temp_current_action.actions[{type:"edge"}] run function mc:main/inputs/trigger/edge/interaction with storage mc:data temp.list[0]
