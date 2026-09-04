@@ -1,5 +1,5 @@
 ##direction check
-execute unless data storage mc:data temp.slide{direction:{right:true}} run return fail
+execute unless data storage mc:data temp.slide{direction:{up:true}} run return fail
 
 ##calcul new pos
 $execute store result score #mc.gui.drag.temp mc.data run data get entity @s data.interaction[{id:$(target_id)}].y
