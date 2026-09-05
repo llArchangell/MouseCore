@@ -7,7 +7,7 @@ $summon text_display ~ ~ ~ \
     billboard: "center" ,\
     background: 0 ,\
     teleport_duration: 1 ,\
-    interpolation_duration: 1 ,\
+    interpolation_duration: 0 ,\
     transformation:\
     {\
     left_rotation:  [0f,0f,0f,1f],\
