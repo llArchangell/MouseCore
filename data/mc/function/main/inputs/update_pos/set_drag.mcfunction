@@ -1,3 +1,5 @@
+function mc:main/inputs/check_interactions/gui/check_layer/sort/append with entity @s data
+
 tag @s add mc.gui.dragging
 
 execute store result score #mc.gui.drag.old_offset_x mc.data run data get entity @s data.origin_x

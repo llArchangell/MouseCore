@@ -17,8 +17,7 @@ $execute store result entity @s data.interaction[{id:$(target_id)}].x int 1 run 
 ##update slider pos
 data modify storage mc:data temp.list set value []
 $data modify storage mc:data temp.list append from entity @s data.interaction[{id:$(target_id)}]
-execute on passengers run tag @s add mc.gui.interaction_setup
-$execute on passengers if entity @s[scores={mc.data=$(target_id)}] run function mc:main/gui/setup/set_size with storage mc:data temp.list[0]
+$execute on passengers if entity @s[scores={mc.data=$(target_id)}] run function mc:main/gui/setup/set_translation/x with storage mc:data temp.list[0]
 
 ##mouse
 scoreboard players operation #mc.gui.drag.offset_x mc.data = #mc.gui.drag.temp mc.data

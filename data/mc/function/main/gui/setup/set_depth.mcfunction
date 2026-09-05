@@ -1,0 +1,1 @@
+data modify entity @s data.depth set from entity @s data.layer

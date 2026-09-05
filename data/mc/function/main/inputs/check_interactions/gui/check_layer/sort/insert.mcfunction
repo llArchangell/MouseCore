@@ -1,0 +1,1 @@
+$data modify storage mc:data temp.elements insert $(index) value {id:$(id)}
