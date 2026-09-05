@@ -6,7 +6,8 @@ $execute store result score #mc.gui.drag.temp mc.data run data get entity @s dat
 scoreboard players operation #mc.gui.drag.temp mc.data += #mc.mouse.strength_x mc.data
 
 ##size limit
-execute if score #mc.gui.drag.temp mc.data matches 1.. run scoreboard players set #mc.gui.drag.temp mc.data 0
+$execute store result score #mc.gui.temp.slide_size mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].x
+execute if score #mc.gui.drag.temp mc.data > #mc.gui.temp.slide_size mc.data run scoreboard players operation #mc.gui.drag.temp mc.data = #mc.gui.temp.slide_size mc.data
 $execute store result entity @s data.interaction[{id:$(target_id)}].x int 1 run scoreboard players get #mc.gui.drag.temp mc.data
 
 ##update slider pos

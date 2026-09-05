@@ -7,7 +7,9 @@ scoreboard players operation #mc.gui.drag.temp mc.data -= #mc.mouse.strength_x m
 
 ##size limit
 $scoreboard players set #mc.gui.temp.slide_size mc.data -$(width)
-$execute store result score #mc.gui.drag.temp_ mc.data run data get entity @s data.interaction[{id:$(target_id)}].width
+$execute store result score #mc.gui.drag.temp_ mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].width
+scoreboard players operation #mc.gui.temp.slide_size mc.data += #mc.gui.drag.temp_ mc.data
+$execute store result score #mc.gui.drag.temp_ mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].x
 scoreboard players operation #mc.gui.temp.slide_size mc.data += #mc.gui.drag.temp_ mc.data
 execute if score #mc.gui.drag.temp mc.data < #mc.gui.temp.slide_size mc.data run scoreboard players operation #mc.gui.drag.temp mc.data = #mc.gui.temp.slide_size mc.data
 $execute store result entity @s data.interaction[{id:$(target_id)}].x int 1 run scoreboard players get #mc.gui.drag.temp mc.data

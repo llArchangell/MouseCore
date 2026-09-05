@@ -1,5 +1,5 @@
 ##unique id
-function mc:main/gui/setup/set_id with storage mc:data temp.list[0]
+execute if data storage mc:data temp.list[0].id run function mc:main/gui/setup/set_id with storage mc:data temp.list[0]
 
 ##set if hover
 execute if score #mc.gui.setting_hover mc.data matches 1 run function mc:main/inputs/trigger/hover/set
