@@ -35,11 +35,11 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         interaction: [\
                             {\
                             text:{x:-49,y:70,depth:6,display: "template",scale:"050"},\
-                            id: 1, x:0,y:50, width:5,height:5,depth:5,edge_margin: 5,\
+                            id: 1, x:-25,y:50, width:5,height:5,depth:5,edge_margin: 5,\
                             action:[\
                                 {trigger:{left_release:true}, type: "button", action: template},\
                                 {trigger:{right_hold:true},   type: "edge", action: resize},\
-                                {trigger:{left_hold:true},    type: "slider",action: test, direction:{left:true,right:true,down:false,up:false}},\
+                                {trigger:{left_hold:true},    type: "slider",action: test, direction:{left:true,right:true,down:false,up:false},x:-25,y:50, width:50,height:0},\
                                 {trigger:{},                  type: "hover", x:-13,y:75,width:0,height:0,depth:6,text:{x:-50,y:50,depth:7,display: "template hover text",scale:"030"}},\
                                 ] \
                             },\
