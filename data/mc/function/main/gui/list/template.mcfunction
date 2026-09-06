@@ -1,7 +1,7 @@
-# ##temp kill so we always with one menu for now
-execute as @n[tag=mc.gui] on passengers on passengers run kill @s
-execute as @n[tag=mc.gui] on passengers run kill @s
-kill @n[tag=mc.gui]
+# # ##temp kill so we always with one menu for now
+# execute as @n[tag=mc.gui] on passengers on passengers run kill @s
+# execute as @n[tag=mc.gui] on passengers run kill @s
+# kill @n[tag=mc.gui]
 
 ##summon entity / set menu data
 $execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \

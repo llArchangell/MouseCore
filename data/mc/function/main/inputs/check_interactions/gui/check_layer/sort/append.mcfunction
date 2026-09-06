@@ -1,5 +1,3 @@
-##set init
-$execute unless data storage mc:data temp.elements[0] run return run data modify storage mc:data temp.elements append value {id:$(id)}
 
 ##get insertion
 $data modify storage mc:data temp.insertion set value {id:$(id)}
