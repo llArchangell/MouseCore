@@ -1,0 +1,31 @@
+{
+    "type": "minecraft:multi_action",
+    "title": "",
+    "inputs": [
+        {
+            "type": "minecraft:text",
+            "key": "text",
+            "label": "",
+            "max_length": 999999999,
+            "label_visible": true,
+            "width": 1024,
+            "multiline": {
+                "height": 20,
+                "max_lines": 1  
+            }
+        }
+    ],
+    "can_close_with_escape": true,
+    "after_action": "close",
+    "pause": true,
+    "actions": [
+        {
+            "label": "Insert text",
+            "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "function mc:main/gui/type/dialog/text {text:$(text)}"
+            }
+        }
+    ],
+    "external_title": "Select font"
+}

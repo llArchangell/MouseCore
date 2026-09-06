@@ -1,0 +1,1 @@
+function mc:main/gui/kill_current with entity @s data
