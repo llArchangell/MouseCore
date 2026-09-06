@@ -1,1 +1,1 @@
-$function mc:main/gui/actions/$(action)
+$function mc:modules/$(module)/actions/$(action)
