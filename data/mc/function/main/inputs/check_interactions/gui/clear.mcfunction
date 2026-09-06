@@ -1,4 +1,7 @@
+execute on passengers on passengers run function mc:main/inputs/check_interactions/gui/reset_color with storage mc:data temp_current_action
+
 
 tag @s remove mc.gui.current
 data remove storage mc:data temp_current_action
-execute on passengers on passengers run data modify entity @s text.color set value gray
+function mc:main/inputs/check_interactions/gui/reset_color
+

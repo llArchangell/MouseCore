@@ -2,7 +2,7 @@
 execute if data storage mc:data temp.list[0].id run function mc:main/gui/setup/set_id with storage mc:data temp.list[0]
 
 ##set size
-$data modify entity @s transformation.translation[2] set value 0.000$(depth)f
+$data modify entity @s transformation.translation[2] set value 0.00000$(depth)f
 
 $scoreboard players set #mc.gui.set_size.temp mc.data $(width)
 scoreboard players set #mc.gui.set_size mc.data 40

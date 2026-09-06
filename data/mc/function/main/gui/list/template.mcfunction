@@ -2,7 +2,7 @@
 # execute as @n[tag=mc.gui] on passengers on passengers run kill @s
 # execute as @n[tag=mc.gui] on passengers run kill @s
 # kill @n[tag=mc.gui]
-
+function mc:main/gui/kill_all
 ##summon entity / set menu data
 $execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
 {\
@@ -34,13 +34,10 @@ $execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         y_offset: 0 ,\
         interaction: [\
                             {\
-                            text:{x:-49,y:70,depth:6,display: "template",scale:"050"},\
-                            id: 1, x:-25,y:50, width:5,height:5,depth:5,edge_margin: 5,\
+                            text:{x:-94,y:89,depth:6,display: "x",scale:"050", background_color:"red" , text_color:"dark_gray", highlight_color: "white"},\
+                            id: 1, x:-90,y:90, width:10,height:10,depth:1,edge_margin: 5, \
                             action:[\
                                 {trigger:{left_release:true}, type: "button", module: included, action: "close_gui"},\
-                                {trigger:{left_hold:true},   type: "edge", action: resize},\
-                                {trigger:{left_hold:true},    type: "slider",action: test, direction:{left:true,right:true,down:true,up:true},x:-25,y:25, width:50,height:50},\
-                                {trigger:{},                  type: "hover", x:-13,y:75,width:0,height:0,depth:6,text:{x:-50,y:50,depth:7,display: "template hover text",scale:"030"}},\
                                 ] \
                             },\
                      ],\

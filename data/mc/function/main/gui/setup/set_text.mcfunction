@@ -1,4 +1,4 @@
-$data modify entity @s transformation.translation[2] set value 0.000$(depth)f
+$data modify entity @s transformation.translation[2] set value 0.00000$(depth)f
 
 $scoreboard players set #mc.gui.set_size.temp mc.data $(x)
 scoreboard players set #mc.gui.set_size mc.data 1000

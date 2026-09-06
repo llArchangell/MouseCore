@@ -1,6 +1,6 @@
 $summon text_display ~ ~ ~ \
     {\
-    text:{text:"\uE000",font:"mc:ui/background_generic",color:dark_gray },\
+    text:{text:"\uE000",font:"mc:ui/background_generic",color:$(background_color) },\
     Tags:["mc.gui.interaction_setup"],\
     \
     view_range: 9999f ,\
@@ -19,7 +19,7 @@ $summon text_display ~ ~ ~ \
     Passengers:\
         [\
             {id:"text_display",\
-            text:{text:"$(display)",color:gray},\
+            text:{text:"$(display)",color:$(text_color)},\
             billboard:"center",\
             background:0,\
             transformation:\
