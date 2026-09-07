@@ -2,11 +2,11 @@
 # execute as @n[tag=mc.gui] on passengers on passengers run kill @s
 # execute as @n[tag=mc.gui] on passengers run kill @s
 # kill @n[tag=mc.gui]
-function mc:main/gui/kill_all
+# function mc:main/gui/kill_all
 ##summon entity / set menu data
 $execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
 {\
-    text:{text:"\uE000",font:"mc:ui/background_generic",color:black},\
+    text:{text:"\uE000",font:"mc:ui/background_generic",color:dark_purple},\
     \
     Tags:\
         [\
@@ -34,7 +34,7 @@ $execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         y_offset: 0 ,\
         interaction: [\
                             {\
-                            text:{x:-94,y:89,depth:6,display: "x",scale:"050", background_color:"red" , text_color:"dark_gray", highlight_color: "white"},\
+                            text:{x:-94,y:89,depth:6,display: "x",scale:"0525", background_color:"red" , text_color:"dark_gray", highlight_color: "white"},\
                             id: 1, x:-90,y:90, width:10,height:10,depth:1,edge_margin: 5, \
                             action:[\
                                 {trigger:{left_release:true}, type: "button", module: included, action: "close_gui"},\

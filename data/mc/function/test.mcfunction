@@ -1,1 +1,1 @@
-$say $(x) $(y) $(id)
+$say $(translation)
