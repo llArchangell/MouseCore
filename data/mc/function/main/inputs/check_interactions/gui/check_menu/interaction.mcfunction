@@ -1,21 +1,19 @@
 ##get x origin
-scoreboard players operation #mc.temp.gui.origin_x mc.data = #mc.temp.gui.min_x mc.data
-scoreboard players operation #mc.temp.gui mc.data = #mc.temp.gui.min_x mc.data
+scoreboard players operation #mc.temp.gui mc.data = #mc.temp.gui.origin_x mc.data
 $scoreboard players set #mc.temp.gui.x_offset mc.data $(x)
 scoreboard players operation #mc.temp.gui mc.data += #mc.temp.gui.x_offset mc.data
 
-##get x min,max
+## min x
 scoreboard players operation #mc.temp.gui.min_x mc.data = #mc.temp.gui mc.data
 execute if score #mc.mouse.x mc.data > #mc.temp.gui.min_x mc.data run return run function mc:main/inputs/check_interactions/gui/check_menu/next_interaction
 
+## max x
 scoreboard players operation #mc.temp.gui.max_x mc.data = #mc.temp.gui mc.data
 $scoreboard players remove #mc.temp.gui.max_x mc.data $(width)
 execute if score #mc.mouse.x mc.data < #mc.temp.gui.max_x mc.data run return run function mc:main/inputs/check_interactions/gui/check_menu/next_interaction
 
-
 ##get y origin
-scoreboard players operation #mc.temp.gui.origin_y mc.data = #mc.temp.gui.min_y mc.data
-scoreboard players operation #mc.temp.gui mc.data = #mc.temp.gui.min_y mc.data
+scoreboard players operation #mc.temp.gui mc.data = #mc.temp.gui.origin_y mc.data
 $scoreboard players set #mc.temp.gui.y_offset mc.data $(y)
 scoreboard players operation #mc.temp.gui mc.data += #mc.temp.gui.y_offset mc.data
 
@@ -38,7 +36,6 @@ data modify storage mc:data temp_current_action.id set from storage mc:data temp
 
 data modify storage mc:data temp_current_action.text_color set from storage mc:data temp.list[0].text.highlight_color
 execute on passengers on passengers run function mc:main/inputs/check_interactions/gui/reset_color with storage mc:data temp_current_action
-
 data modify storage mc:data temp_current_action.text_color set from storage mc:data temp.list[0].text.text_color
 
 data modify storage mc:data gui.active_types.button set value true

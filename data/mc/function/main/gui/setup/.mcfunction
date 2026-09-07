@@ -21,6 +21,7 @@ function mc:main/inputs/check_interactions/gui/check_layer/sort/append with enti
 
 execute as @a on vehicle at @s as @n[type=text_display,tag=mc.gui.setup,limit=1,distance=..5] run function mc:main/inputs/update_pos/update_gui_pos with entity @s data
 
+tag @e remove mc.gui.setup
 
-##debug
-tellraw @a[tag=mc.dev] {text:"[Gui setup completed...]",color:green}
+# ##debug
+# tellraw @a[tag=mc.dev] {text:"[Gui setup completed...]",color:green}
