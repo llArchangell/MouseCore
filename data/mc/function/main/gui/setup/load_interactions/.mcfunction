@@ -1,7 +1,7 @@
 say load interaction
 $summon text_display ~ ~ ~ \
     {\
-    text:{text:"\uE000",font:"mc:ui/background_generic",color:$(background_color) },\
+    text:{text:"\uE000",font:"mc:ui/background_generic",color:$(background_color)},\
     Tags:["mc.gui.interaction_setup"],\
     \
     view_range: 9999f ,\
@@ -34,7 +34,8 @@ $summon text_display ~ ~ ~ \
         ]\
     }
 
-scoreboard players add #mc.interaction_id mc.data 1
+
+##set size
 execute as @n[type=text_display,limit=1,distance=..5,tag=mc.gui.interaction_setup] run function mc:main/gui/setup/set_size with storage mc:data temp.list[0]
 
 data remove storage mc:data temp.list[0]

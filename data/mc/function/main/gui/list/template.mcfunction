@@ -35,20 +35,19 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         interaction: [\
                             {\
                             text:{x:-94,y:89,depth:6,display: "x",scale:"0525", background_color:"red" , text_color:"dark_gray", highlight_color: "white"},\
-                            id: 1, x:-90,y:90, width:10,height:10,depth:1,edge_margin: 5, \
+                            id: 0, x:-90,y:90, width:10,height:10,depth:1,edge_margin: 5, \
                             action:[\
                                 {trigger:{left_release:true}, type: "button", module: included, action: "close_gui"},\
                                     ] \
                             },\
                             \
                             {\
-                            text:{x:-94,y:89,depth:6,display: "x",scale:"0525", background_color:"e" , text_color:"dark_gray", highlight_color: "white"},\
-                            id: 1, x:0,y:0, width:10,height:10,depth:1,edge_margin: 5, \
+                            text:{x:4,y:0,depth:6,display: "x",scale:"0525", background_color:"red" , text_color:"dark_gray", highlight_color: "white"},\
+                            id: 0, x:0,y:0, width:10,height:10,depth:1,edge_margin: 5, \
                             action:[\
                                 {trigger:{left_release:true}, type: "button", module: included, action: "close_gui"},\
                                     ] \
                             },\
-                            \
                      ],\
         },\
     \

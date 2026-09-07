@@ -1,1 +1,1 @@
-$data modify entity @s text.color set value $(text_color)
+$execute as @n[scores={mc.data=$(id)}] on passengers run data modify entity @s text.color set value "$(text_color)"
