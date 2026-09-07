@@ -1,1 +1,1 @@
-$execute as @n[scores={mc.data=$(id)}] run function mc:main/gui/setup/set_depth/reset_old with storage mc:data temp.latest
+$execute as @n[scores={mc.data=$(id)}] run function mc:main/gui/setup/set_depth/reset_old

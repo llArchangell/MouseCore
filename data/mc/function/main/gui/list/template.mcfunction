@@ -2,7 +2,7 @@
 # execute as @n[tag=mc.gui] on passengers on passengers run kill @s
 # execute as @n[tag=mc.gui] on passengers run kill @s
 # kill @n[tag=mc.gui]
-function mc:main/gui/kill_all
+# function mc:main/gui/kill_all
 ##summon entity / set menu data
 execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
 {\
