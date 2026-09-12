@@ -21,6 +21,7 @@ $summon text_display ~ ~ ~ \
         [\
             {id:"text_display",\
             alignment:$(alignment),\
+            line_width:$(line_width),\
             text:{text:"$(display)",color:$(text_color)},\
             billboard:"center",\
             background:0,\

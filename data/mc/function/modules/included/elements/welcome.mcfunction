@@ -35,7 +35,7 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
         y_offset: 0 ,\
         interaction: [\
                             {\
-                            text:{x:-100,y:12,depth:6,display: "Ok!",scale:"0525", background_color:black, text_color:"gray", highlight_color: "green",text_opacity:50,alignment:"center"},\
+                            text:{x:-100,y:12,depth:6,display: "Ok!",scale:"0525", background_color:black, text_color:"gray", highlight_color: "green",text_opacity:50,alignment:"center",line_width:100},\
                              x:-70,y:10, width:60,height:20,depth:1,edge_margin: 0, \
                             action:[\
                                 {trigger:{left_release:true}, type: "button", \
@@ -49,14 +49,14 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
                             \
                             \
                             {\
-                            text:{x:-100,y:275,depth:6,display: "Welcome to MouseCore!",scale:"0525", background_color:black, text_color:"white", highlight_color: "green",text_opacity:255,alignment:"center"},\
+                            text:{x:-100,y:250,depth:6,display: "Welcome to MouseCore!",scale:"0525", background_color:black, text_color:"white", highlight_color: "green",text_opacity:255,alignment:"center",line_width:100},\
                             x:0,y:0, width:0,height:0,depth:1,edge_margin:0, \
                             action:[] \
                             },\
                             \
                             {\
-                            text:{x:-100,y:40,depth:6,display:"texttexttexttexttexttexttext\ntextexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\ntexttexttexttexttexttexttext\n", file:"test", \
-                            scale:"0525", background_color:black, text_color:"white", highlight_color: "green",text_opacity:255,alignment:"left"},\
+                            text:{x:-100,y:40,depth:6,display:"This is some text with line-width", \
+                            scale:"0525", background_color:black, text_color:"white", highlight_color: "green",text_opacity:255,alignment:"left",line_width:25},\
                             x:0,y:0, width:0,height:0,depth:1,edge_margin:0, \
                             action:[] \
                             },\
