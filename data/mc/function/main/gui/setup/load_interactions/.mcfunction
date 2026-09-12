@@ -1,7 +1,7 @@
-say load interaction
 $summon text_display ~ ~ ~ \
     {\
     text:{text:"\uE000",font:"mc:ui/background_generic",color:$(background_color)},\
+    text_opacity:$(text_opacity),\
     Tags:["mc.gui.interaction_setup"],\
     \
     view_range: 9999f ,\
@@ -20,6 +20,7 @@ $summon text_display ~ ~ ~ \
     Passengers:\
         [\
             {id:"text_display",\
+            alignment:$(alignment),\
             text:{text:"$(display)",color:$(text_color)},\
             billboard:"center",\
             background:0,\

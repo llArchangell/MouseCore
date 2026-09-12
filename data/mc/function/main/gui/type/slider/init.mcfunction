@@ -1,4 +1,3 @@
-
 tag @s add mc.gui.sliding
 
 data modify storage mc:data temp.slide set value {}

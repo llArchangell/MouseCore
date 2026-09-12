@@ -4,10 +4,11 @@
 # kill @n[tag=mc.gui]
 # function mc:main/gui/kill_all
 ##summon entity / set menu data
+
 execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
 {\
-    text:{text:"\uE000",font:"mc:ui/background_generic",color:dark_purple},\
-    \
+    text:{text:"\uE000",font:"mc:ui/background_generic",color:black},\
+    text_opacity:150, \
     Tags:\
         [\
         "mc.gui",\

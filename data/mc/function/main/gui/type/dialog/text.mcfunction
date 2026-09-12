@@ -1,1 +1,1 @@
-$say $(text)
+$say "$(text)""
