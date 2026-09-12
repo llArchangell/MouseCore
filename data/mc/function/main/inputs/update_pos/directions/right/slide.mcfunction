@@ -1,5 +1,5 @@
 ##direction check
-execute unless data storage mc:data temp.slide{direction:{right:true}} run return fail
+execute if data storage mc:data temp.slide.direction{right:"none"} run return fail
 
 ##calcul new pos
 $execute store result score #mc.gui.drag.temp mc.data run data get entity @s data.interaction[{id:$(target_id)}].x
@@ -25,3 +25,5 @@ scoreboard players operation #mc.gui.drag.offset_x mc.data -= #mc.gui.drag.old_o
 scoreboard players operation #mc.mouse.x mc.data = #mc.gui.drag.offset_x mc.data
 execute store result storage mc:data input.mouse.x float 0.001 run scoreboard players get #mc.mouse.x mc.data
 function mc:main/inputs/check_interactions/ with storage mc:data input.mouse
+
+$function mc:main/gui/type/slider/action with entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].direction.right
