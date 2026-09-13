@@ -24,6 +24,7 @@ $summon text_display ~ ~ ~ \
             line_width:$(line_width),\
             text:{text:"$(display)",color:$(text_color)},\
             billboard:"center",\
+            see_through:1b,\
             background:0,\
             transformation:\
                 {\
