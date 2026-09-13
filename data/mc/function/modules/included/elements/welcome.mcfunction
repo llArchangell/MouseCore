@@ -9,7 +9,7 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
 {\
     text:{text:"\uE000",font:"mc:ui/background_generic",color:black},\
     text_opacity:100, \
-    see_through:1b,\
+    see_through:0b,\
     Tags:\
         [\
         "mc.gui",\

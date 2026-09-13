@@ -14,6 +14,7 @@ text:{text:"\uE000",font:"mc:ui/background_generic",color:white},\
 teleport_duration:1,\
 billboard:center,\
 background:0,\
+see_through:0b,\
 transformation:\
     {\
     left_rotation:[0f,0f,0f,1f],\
