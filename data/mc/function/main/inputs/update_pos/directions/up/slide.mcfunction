@@ -21,6 +21,8 @@ data modify storage mc:data temp.list set value []
 $data modify storage mc:data temp.list append from entity @s data.interaction[{id:$(target_id)}]
 $execute on passengers if entity @s[scores={mc.data=$(target_id)}] run function mc:main/gui/setup/set_translation/y with storage mc:data temp.list[0]
 
+scoreboard players operation #mc.gui.slide.old_y mc.data = #mc.gui.drag.temp mc.data
+
 ##mouse
 scoreboard players operation #mc.gui.drag.offset_y mc.data = #mc.gui.drag.temp mc.data
 scoreboard players operation #mc.gui.drag.offset_y mc.data -= #mc.gui.drag.old_offset_y mc.data
@@ -33,10 +35,9 @@ $execute store result score #mc.gui.slider.max mc.data run data get entity @s da
 scoreboard players operation #mc.slider.percent mc.data = #mc.gui.slider.max mc.data
 scoreboard players operation #mc.slider.percent mc.data *= #mc.gui.drag.temp mc.data
 scoreboard players operation #mc.slider.percent mc.data /= #mc.gui.temp.slide_size mc.data
-tellraw @a {score:{name:"#mc.slider.percent",objective:mc.data}}
+execute unless score #mc.slider.old_percent_y mc.data = #mc.slider.percent mc.data run function mc:main/gui/type/slider/action
+scoreboard players operation #mc.slider.old_percent_y mc.data = #mc.slider.percent mc.data
 
-
-scoreboard players operation #mc.gui.slide.old_y mc.data = #mc.gui.drag.temp mc.data
 #action
 # $function mc:main/gui/type/slider/action with entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].direction.up
 

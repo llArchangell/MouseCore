@@ -1,1 +1,2 @@
-$function mc:modules/$(module)/actions/$(action)
+say snap
+# $function mc:modules/$(module)/actions/$(action)
