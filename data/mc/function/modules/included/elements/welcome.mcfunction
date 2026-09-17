@@ -56,10 +56,11 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
                             },\
                             \
                             {\
-                            text:{x:-100,y:40,depth:6,display:"This is some text with line-width", \
-                            scale:"02625", background_color:black, text_color:"white", highlight_color: "green",text_opacity:255,alignment:"left",line_width:50},\
-                            x:0,y:0, width:0,height:0,depth:1,edge_margin:0, \
-                            action:[] \
+                            text:{x:0,y:25,depth:6,display: "",scale:"050", background_color:"gray" , text_color:"dark_gray", highlight_color: "white",text_opacity:255,alignment:"center",line_width:100},\
+                            id: 1, x:0,y:0, width:10,height:15,depth:50,edge_margin: 5,\
+                            action:[\
+                                {trigger:{left_hold:true},    type: "slider",action: test, direction:{left:"none",right:"none",down:{module:included,action:a},up:{module:included,action:a}},x:0,y:0,max_y:3,max_x:0, width:0,height:50},\
+                                    ] \
                             },\
 \
                      ],\

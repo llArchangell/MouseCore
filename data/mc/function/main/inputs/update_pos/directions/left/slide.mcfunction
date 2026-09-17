@@ -1,3 +1,5 @@
+#direction check
+execute if data storage mc:data temp.slide.direction{left:"none"} run return fail
 
 ##calcul new pos
 $execute store result score #mc.gui.drag.temp mc.data run data get entity @s data.interaction[{id:$(target_id)}].x
@@ -5,6 +7,7 @@ scoreboard players operation #mc.gui.drag.temp mc.data += #mc.mouse.strength_x m
 
 ##size limit
 $execute store result score #mc.gui.temp.slide_size mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].x
+execute if score #mc.gui.drag.temp mc.data > #mc.gui.temp.slide_size mc.data if score #mc.gui.slide.old_x mc.data >= #mc.gui.temp.slide_size mc.data run return fail
 execute if score #mc.gui.drag.temp mc.data > #mc.gui.temp.slide_size mc.data run scoreboard players operation #mc.gui.drag.temp mc.data = #mc.gui.temp.slide_size mc.data
 $execute store result entity @s data.interaction[{id:$(target_id)}].x int 1 run scoreboard players get #mc.gui.drag.temp mc.data
 
@@ -20,7 +23,32 @@ scoreboard players operation #mc.mouse.x mc.data = #mc.gui.drag.offset_x mc.data
 execute store result storage mc:data input.mouse.x float 0.001 run scoreboard players get #mc.mouse.x mc.data
 function mc:main/inputs/check_interactions/ with storage mc:data input.mouse
 
-#direction check
-execute if data storage mc:data temp.slide.direction{left:"left"} run return fail
+scoreboard players operation #mc.gui.slide.old_x mc.data = #mc.gui.drag.temp mc.data
 
-$function mc:main/gui/type/slider/action with entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].direction.left
+
+
+
+
+
+
+##size limit
+$scoreboard players set #mc.gui.temp.slide_size mc.data -$(width)
+$execute store result score #mc.gui.drag.temp_ mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].width
+scoreboard players operation #mc.gui.temp.slide_size mc.data += #mc.gui.drag.temp_ mc.data
+$execute store result score #mc.gui.drag.temp_ mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].x
+scoreboard players operation #mc.gui.temp.slide_size mc.data += #mc.gui.drag.temp_ mc.data
+execute if score #mc.gui.drag.temp mc.data < #mc.gui.temp.slide_size mc.data if score #mc.gui.slide.old_x mc.data <= #mc.gui.temp.slide_size mc.data run return fail
+execute if score #mc.gui.drag.temp mc.data < #mc.gui.temp.slide_size mc.data run scoreboard players operation #mc.gui.drag.temp mc.data = #mc.gui.temp.slide_size mc.data
+$execute store result entity @s data.interaction[{id:$(target_id)}].x int 1 run scoreboard players get #mc.gui.drag.temp mc.data
+
+##snap
+$execute store result score #mc.gui.slider.max mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].max_x
+scoreboard players operation #mc.slider.percent mc.data = #mc.gui.slider.max mc.data
+scoreboard players operation #mc.slider.percent mc.data *= #mc.gui.drag.temp mc.data
+scoreboard players operation #mc.slider.percent mc.data /= #mc.gui.temp.slide_size mc.data
+tellraw @a {score:{name:"#mc.slider.percent",objective:mc.data}}
+
+
+
+# $function mc:main/gui/type/slider/action with entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].direction.left
+

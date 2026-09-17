@@ -1,7 +1,10 @@
+##direction check
+execute if data storage mc:data temp.slide.direction{up:"none"} run return fail
 
 ##calcul new pos
 $execute store result score #mc.gui.drag.temp mc.data run data get entity @s data.interaction[{id:$(target_id)}].y
 scoreboard players operation #mc.gui.drag.temp mc.data += #mc.mouse.strength_y mc.data
+scoreboard players operation #mc.gui.slide.total mc.data = #mc.gui.drag.temp mc.data
 
 ##size limit
 $scoreboard players set #mc.gui.temp.slide_size mc.data $(height)
@@ -9,6 +12,7 @@ $execute store result score #mc.gui.drag.temp_ mc.data run data get entity @s da
 scoreboard players operation #mc.gui.temp.slide_size mc.data -= #mc.gui.drag.temp_ mc.data
 $execute store result score #mc.gui.drag.temp_ mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].y
 scoreboard players operation #mc.gui.temp.slide_size mc.data += #mc.gui.drag.temp_ mc.data
+execute if score #mc.gui.drag.temp mc.data > #mc.gui.temp.slide_size mc.data if score #mc.gui.slide.old_y mc.data >= #mc.gui.temp.slide_size mc.data run return fail
 execute if score #mc.gui.drag.temp mc.data > #mc.gui.temp.slide_size mc.data run scoreboard players operation #mc.gui.drag.temp mc.data = #mc.gui.temp.slide_size mc.data
 $execute store result entity @s data.interaction[{id:$(target_id)}].y int 1 run scoreboard players get #mc.gui.drag.temp mc.data
 
@@ -24,7 +28,15 @@ scoreboard players operation #mc.mouse.y mc.data = #mc.gui.drag.offset_y mc.data
 execute store result storage mc:data input.mouse.y float 0.001 run scoreboard players get #mc.mouse.y mc.data
 function mc:main/inputs/check_interactions/ with storage mc:data input.mouse
 
-##direction check
-execute if data storage mc:data temp.slide.direction{up:"none"} run return fail
+##snap
+$execute store result score #mc.gui.slider.max mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].max_y
+scoreboard players operation #mc.slider.percent mc.data = #mc.gui.slider.max mc.data
+scoreboard players operation #mc.slider.percent mc.data *= #mc.gui.drag.temp mc.data
+scoreboard players operation #mc.slider.percent mc.data /= #mc.gui.temp.slide_size mc.data
+tellraw @a {score:{name:"#mc.slider.percent",objective:mc.data}}
 
-$function mc:main/gui/type/slider/action with entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].direction.up
+
+scoreboard players operation #mc.gui.slide.old_y mc.data = #mc.gui.drag.temp mc.data
+#action
+# $function mc:main/gui/type/slider/action with entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].direction.up
+
