@@ -1,2 +1,2 @@
 
-scoreboard players set #mc.sensibility mc.data 50
+scoreboard players set #mc.sensibility mc.data 25

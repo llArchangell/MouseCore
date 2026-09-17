@@ -7,10 +7,11 @@ summon text_display ~ ~.60 ~ {\
 execute as @n[tag=mc.input.main] rotated as @n[type=player] run rotate @s ~ 55
 ride @s mount a1baddfe-1630-42e9-9d9c-2ef228025af8 
 
+execute as 3c69601e-49ad-44ce-b75b-44196417ede6 on passengers run kill @s
 kill 3c69601e-49ad-44ce-b75b-44196417ede6
 summon text_display ~ ~ ~ {\
 UUID:[I;1013538846,1236092110,-1218755559,1679289830],\
-text:{text:"\uE000",font:"mc:ui/background_generic",color:white},\
+Passengers:[{id:text_display,text:{text:"\uE000",font:"mc:ui/background_generic",color:white},\
 teleport_duration:1,\
 billboard:center,\
 background:0,\
@@ -21,7 +22,7 @@ transformation:\
     right_rotation:[0f,0f,0f,1f],\
     scale:[.125f,.125f,.125f],\
     translation:[-.00125f,-.00125f,0.0009f]\
-    },\
+    }}],\
     \
 }
 
