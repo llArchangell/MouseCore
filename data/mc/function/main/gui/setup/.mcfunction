@@ -30,6 +30,7 @@ execute as @n[tag=mc.gui.setup] run function mc:main/inputs/update_pos/init with
 
 execute as @a on vehicle at @s as @n[type=text_display,tag=mc.gui.setup,limit=1,distance=..5] run function mc:main/inputs/update_pos/update_gui_pos with entity @s data
 
+function mc:main/gui/type/slider/init_pos/
 
 tag @e remove mc.gui.setup
 
