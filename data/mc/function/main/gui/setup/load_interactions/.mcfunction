@@ -1,3 +1,4 @@
+
 $summon text_display ~ ~ ~ \
     {\
     text:{text:"\uE000",font:"mc:ui/background_generic",color:$(background_color)},\

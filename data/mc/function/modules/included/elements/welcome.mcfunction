@@ -64,6 +64,37 @@ execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
                             },\
 \
                      ],\
+\
+\
+\
+\
+\
+        pages:[\
+        {interaction:[{\
+                            text:{x:-100,y:200,depth:6,display: "Test 1",scale:"0525", background_color:black, text_color:"white", highlight_color: "green",text_opacity:255,alignment:"center",line_width:100},\
+                            x:0,y:0, width:0,height:0,depth:1,edge_margin:0, \
+                            action:[] \
+                       }]},\
+        \
+        {interaction:[{\
+                            text:{x:-100,y:200,depth:6,display: "Test 2",scale:"0525", background_color:black, text_color:"white", highlight_color: "green",text_opacity:255,alignment:"center",line_width:100},\
+                            x:0,y:0, width:0,height:0,depth:1,edge_margin:0, \
+                            action:[] \
+                       }]},\
+        \
+        {interaction:[{\
+                            text:{x:-100,y:200,depth:6,display: "Test 3",scale:"0525", background_color:black, text_color:"white", highlight_color: "green",text_opacity:255,alignment:"center",line_width:100},\
+                            x:0,y:0, width:0,height:0,depth:1,edge_margin:0, \
+                            action:[] \
+                       }]},\
+        \
+        {interaction:[{\
+                            text:{x:-100,y:200,depth:6,display: "Test 4",scale:"0525", background_color:black, text_color:"white", highlight_color: "green",text_opacity:255,alignment:"center",line_width:100},\
+                            x:0,y:0, width:0,height:0,depth:1,edge_margin:0, \
+                            action:[] \
+                       }]},\
+        ],\
+        \
         },\
     \
     view_range: 9999f ,\

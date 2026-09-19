@@ -1,3 +1,4 @@
+kill @e[type=text_display]
 kill a1baddfe-1630-42e9-9d9c-2ef228025af8 
 summon text_display ~ ~.60 ~ {\
     UUID:[I;-1581588994,372261609,-1650708750,671243000],\
@@ -47,3 +48,5 @@ scoreboard players set #mc.input.strength mc.data 0
 
 scoreboard players set #mc.input.diff_x mc.data 0
 scoreboard players set #mc.input.diff_y mc.data 0
+
+execute as @a on vehicle at @s run function mc:modules/included/elements/welcome
