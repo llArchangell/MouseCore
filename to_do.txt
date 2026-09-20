@@ -1,6 +1,1 @@
-page system?
-
-main structure:
-unload old page / load new page based on a list
-
-list = [0] = [{interactions},...], choose either to put it inside the entity // seperate storage
+init page = execute store score run data get entity @s data.pages

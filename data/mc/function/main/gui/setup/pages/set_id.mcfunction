@@ -5,4 +5,4 @@ $data modify entity @s data.pages[$(current_page)].interaction append from stora
 data modify entity @s data.interaction append from storage mc:data temp.set_id[0]
 
 data remove storage mc:data temp.set_id[0]
-execute if data storage mc:data temp.set_id[0] run function mc:main/gui/setup/load_interactions/set_id/ with storage mc:data temp
+execute if data storage mc:data temp.set_id[0] run function mc:main/gui/setup/pages/set_id with storage mc:data temp
