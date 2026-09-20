@@ -30,14 +30,13 @@ scoreboard players operation #mc.mouse.y mc.data = #mc.gui.drag.offset_y mc.data
 execute store result storage mc:data input.mouse.y float 0.001 run scoreboard players get #mc.mouse.y mc.data
 function mc:main/inputs/check_interactions/ with storage mc:data input.mouse
 
+##
+data modify storage mc:data temp.slider_load.axis set value "y"
+
 ##snap
 $execute store result score #mc.gui.slider.max mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].max_y
 scoreboard players operation #mc.slider.percent mc.data = #mc.gui.slider.max mc.data
 scoreboard players operation #mc.slider.percent mc.data *= #mc.gui.drag.temp mc.data
 scoreboard players operation #mc.slider.percent mc.data /= #mc.gui.temp.slide_size mc.data
-execute unless score #mc.slider.old_percent_y mc.data = #mc.slider.percent mc.data run function mc:main/gui/type/slider/action {axis:y}
+$execute unless score #mc.slider.old_percent_y mc.data = #mc.slider.percent mc.data run function mc:main/gui/type/slider/action with entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].direction.up
 scoreboard players operation #mc.slider.old_percent_y mc.data = #mc.slider.percent mc.data
-
-#action
-# $function mc:main/gui/type/slider/action with entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].direction.up
-
