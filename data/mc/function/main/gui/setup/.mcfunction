@@ -1,38 +1,12 @@
-##kill interactions boxes + texts
-execute on passengers on passengers run kill @s
-execute on passengers run kill @s
+function mc:main/gui/setup/background with storage mc:data load.background
 
-##set layer + window size
-$scoreboard players set @s mc.gui_layer $(layer)
-function mc:main/gui/setup/set_size with entity @s data
+tag @s add mc.gui.setup
+function mc:main/gui/setup/load_interactions/init
+tag @s remove mc.gui.setup
 
+##add loaded element to element list [temp]
+data modify storage mc:data elements append from storage mc:data load
 
-##create interactions
-data modify storage mc:data temp.list set value []
-
-data modify storage mc:data temp.set_id set value []
-data modify storage mc:data temp.set_id set from entity @s data.interaction
-
-data modify entity @s data.interaction set value []
-function mc:main/gui/setup/load_interactions/set_id/
-
-execute if data storage mc:data temp.list[0] run function mc:main/gui/setup/load_interactions/ with storage mc:data temp.list[0].text
-
-##set id
-scoreboard players add #mc.interaction_id mc.data 1
-scoreboard players operation @s mc.data = #mc.interaction_id mc.data
-execute store result entity @s data.id int 1 run scoreboard players get @s mc.data
-
-scoreboard players set #mc.gui.sort.insert mc.data 0
-function mc:main/inputs/check_interactions/gui/check_layer/sort/append with entity @s data
-
-execute as @n[tag=mc.gui.setup] run function mc:main/inputs/update_pos/init with entity @s data
-
-execute as @a on vehicle at @s as @n[type=text_display,tag=mc.gui.setup,limit=1,distance=..5] run function mc:main/inputs/update_pos/update_gui_pos with entity @s data
-
-function mc:main/gui/type/slider/init_pos/
-
-tag @e remove mc.gui.setup
-
-# ##debug
-# tellraw @a[tag=mc.dev] {text:"[Gui setup completed...]",color:green}
+# scoreboard players set #mc.gui.sort.insert mc.data 0
+# function mc:main/inputs/check_interactions/gui/check_layer/sort/append with storage mc:data load
+# function mc:main/gui/type/slider/init_pos/

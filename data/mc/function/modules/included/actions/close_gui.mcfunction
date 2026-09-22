@@ -1,1 +1,1 @@
-function mc:main/gui/kill_current with entity @s data
+function mc:main/gui/kill/current/ with storage mc:data current_action

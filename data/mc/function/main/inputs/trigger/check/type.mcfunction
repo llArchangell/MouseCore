@@ -1,0 +1,1 @@
+$function mc:modules/$(module)/types/$(type)/init $(settings)

@@ -1,7 +1,12 @@
+
 scoreboard players set #mc.right_click mc.data 0
-tag @n[type=text_display,tag=mc.gui.dragging,tag=mc.gui.dragable,limit=1,distance=..5] remove mc.gui.dragging
 
+##clear types
+tag @n[type=text_display,limit=1,tag=mc.gui.dragging,distance=..2] remove mc.gui.dragging
+tag @n[type=text_display,limit=1,tag=mc.gui.sliding,distance=..2] remove mc.gui.sliding
 
-data modify storage mc:data current_action set from storage mc:data temp_current_action.actions
-data modify storage mc:data current_action[0].input set value "right_release"
-execute as @n[tag=mc.gui.current] run function mc:main/inputs/trigger/check/ with storage mc:data current_action[0]
+##input check
+data modify storage mc:data temp.list set value []
+data modify storage mc:data temp.list set from storage mc:data current_action.action
+data modify storage mc:data temp.list[0].input set value "right_release"
+execute if data storage mc:data temp.list[0] run function mc:main/inputs/trigger/check/ with storage mc:data temp.list[0]

@@ -13,5 +13,6 @@ scoreboard players remove #mc.mouse.diff_y mc.data 18000
 scoreboard players operation #mc.mouse.strength_y mc.data = #mc.mouse.diff_y mc.data
 execute if score #mc.mouse.strength_y mc.data matches ..-1 run scoreboard players operation #mc.mouse.strength_y mc.data *= #-1 mc.data
 
-execute if score #mc.mouse.diff_y mc.data matches ..-1 run return run function mc:main/inputs/update_pos/directions/up/
-execute if score #mc.mouse.diff_y mc.data matches 1.. run return run function mc:main/inputs/update_pos/directions/down/
+execute unless data storage mc:data temp.set_drag run data modify storage mc:data temp.set_drag set value {id:0}
+execute if score #mc.mouse.diff_y mc.data matches ..-1 run return run function mc:main/inputs/update_pos/directions/up/ with storage mc:data temp.set_drag
+execute if score #mc.mouse.diff_y mc.data matches 1.. run return run function mc:main/inputs/update_pos/directions/down/ with storage mc:data temp.set_drag

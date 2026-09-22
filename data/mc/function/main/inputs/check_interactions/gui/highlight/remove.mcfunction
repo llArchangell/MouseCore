@@ -1,0 +1,1 @@
+$data modify entity @s text.color set value $(background_color)

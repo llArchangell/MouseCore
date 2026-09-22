@@ -1,1 +1,4 @@
-init page = execute store score run data get entity @s data.pages
+
+order rework
+slider page load
+add back hover + edge triggers

@@ -1,7 +1,11 @@
+execute if score #mc.right_click mc.data matches 1.. run return fail
 scoreboard players add #mc.right_click mc.data 1
 
-execute unless score #mc.looking_interaction mc.data matches 1 if score #mc.right_click mc.data matches 1 as @n[type=text_display,tag=mc.gui.current,tag=mc.gui.dragable,limit=1,distance=..5] run return run function mc:main/inputs/update_pos/set_drag
+##drag check
+execute if data storage mc:data current_action{type:"main"} as @n[type=text_display,limit=1,tag=mc.gui.current,distance=..2] run return run function mc:main/inputs/update_pos/set_drag with storage mc:data current_action
 
-data modify storage mc:data current_action set from storage mc:data temp_current_action.actions
-data modify storage mc:data current_action[0].input set value "right_hold"
-execute as @n[tag=mc.gui.current] run function mc:main/inputs/trigger/check/ with storage mc:data current_action[0]
+##input check
+data modify storage mc:data temp.list set value []
+data modify storage mc:data temp.list set from storage mc:data current_action.action
+data modify storage mc:data temp.list[0].input set value "right_hold"
+execute if data storage mc:data temp.list[0] run function mc:main/inputs/trigger/check/ with storage mc:data temp.list[0]

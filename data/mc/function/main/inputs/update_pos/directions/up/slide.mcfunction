@@ -1,27 +1,23 @@
-##direction check
-execute if data storage mc:data temp.slide.direction{up:"none"} run return fail
+# ##direction check
+execute unless data storage mc:data current_action.action[{type:slider}].direction.up run return fail
 
 ##calcul new pos
-$execute store result score #mc.gui.drag.temp mc.data run data get entity @s data.interaction[{id:$(target_id)}].y
+execute store result score #mc.gui.drag.temp mc.data run data get storage mc:data current_action.background.y
 scoreboard players operation #mc.gui.drag.temp mc.data += #mc.mouse.strength_y mc.data
-scoreboard players operation #mc.gui.slide.total mc.data = #mc.gui.drag.temp mc.data
 
-##size limit
-# $scoreboard players set #mc.gui.temp.slide_size mc.data $(height)
-$execute store result score #mc.gui.drag.temp_ mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].height
-scoreboard players operation #mc.gui.temp.slide_size mc.data = #mc.gui.drag.temp_ mc.data
-$execute store result score #mc.gui.drag.temp_ mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].y
-scoreboard players operation #mc.gui.temp.slide_size mc.data += #mc.gui.drag.temp_ mc.data
-execute if score #mc.gui.drag.temp mc.data > #mc.gui.temp.slide_size mc.data if score #mc.gui.slide.old_y mc.data >= #mc.gui.temp.slide_size mc.data run return fail
+# ##size limit
+scoreboard players operation #mc.gui.temp.slide_size mc.data = #mc.gui.slide.max_y mc.data
+execute if score #mc.gui.drag.temp mc.data >= #mc.gui.temp.slide_size mc.data if score #mc.gui.slide.old_y mc.data >= #mc.gui.temp.slide_size mc.data run return fail
 execute if score #mc.gui.drag.temp mc.data > #mc.gui.temp.slide_size mc.data run scoreboard players operation #mc.gui.drag.temp mc.data = #mc.gui.temp.slide_size mc.data
-$execute store result entity @s data.interaction[{id:$(target_id)}].y int 1 run scoreboard players get #mc.gui.drag.temp mc.data
+execute store result storage mc:data current_action.background.y int 1 run scoreboard players get #mc.gui.drag.temp mc.data
 
 ##update slider pos
 data modify storage mc:data temp.list set value []
-$data modify storage mc:data temp.list append from entity @s data.interaction[{id:$(target_id)}]
-$execute on passengers if entity @s[scores={mc.data=$(target_id)}] run function mc:main/gui/setup/set_translation/y with storage mc:data temp.list[0]
+data modify storage mc:data temp.list append from storage mc:data current_action.background
+$execute as @n[scores={mc.data=$(id)}] run function mc:main/gui/setup/set_translation/y with storage mc:data temp.list[0]
 
 scoreboard players operation #mc.gui.slide.old_y mc.data = #mc.gui.drag.temp mc.data
+function mc:modules/included/types/slider/save_new_data/ with storage mc:data temp 
 
 ##mouse
 scoreboard players operation #mc.gui.drag.offset_y mc.data = #mc.gui.drag.temp mc.data
@@ -30,13 +26,8 @@ scoreboard players operation #mc.mouse.y mc.data = #mc.gui.drag.offset_y mc.data
 execute store result storage mc:data input.mouse.y float 0.001 run scoreboard players get #mc.mouse.y mc.data
 function mc:main/inputs/check_interactions/ with storage mc:data input.mouse
 
-##
-data modify storage mc:data temp.slider_load.axis set value "y"
-
-##snap
-$execute store result score #mc.gui.slider.max mc.data run data get entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].max_y
-scoreboard players operation #mc.slider.percent mc.data = #mc.gui.slider.max mc.data
-scoreboard players operation #mc.slider.percent mc.data *= #mc.gui.drag.temp mc.data
-scoreboard players operation #mc.slider.percent mc.data /= #mc.gui.temp.slide_size mc.data
-$execute unless score #mc.slider.old_percent_y mc.data = #mc.slider.percent mc.data run function mc:main/gui/type/slider/action with entity @s data.interaction[{id:$(target_id)}].action[{type:slider}].direction.up
-scoreboard players operation #mc.slider.old_percent_y mc.data = #mc.slider.percent mc.data
+##action
+data modify storage mc:data temp.axis set value "y"
+data modify storage mc:data temp.list set value []
+data modify storage mc:data temp.list append from storage mc:data current_action.action[{type:slider}]
+function mc:main/inputs/trigger/actions/ with storage mc:data temp.list[0]

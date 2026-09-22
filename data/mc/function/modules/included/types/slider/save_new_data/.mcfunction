@@ -1,0 +1,2 @@
+$data modify storage mc:data elements[{id:$(current_element)}].temp set from storage mc:data current_action.id
+$function mc:modules/included/types/slider/save_new_data/save with storage mc:data elements[{id:$(current_element)}]

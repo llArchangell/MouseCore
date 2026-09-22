@@ -1,0 +1,1 @@
+$execute as @n[type=text_display,limit=1,tag=mc.gui,scores={mc.data=$(id)}] run function mc:main/gui/kill/current/kill with storage mc:data temp
