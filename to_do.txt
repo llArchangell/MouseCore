@@ -1,4 +1,3 @@
-
+init page load
 order rework
-slider page load
 add back hover + edge triggers

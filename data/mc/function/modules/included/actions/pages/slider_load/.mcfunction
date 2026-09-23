@@ -1,1 +1,0 @@
-function mc:modules/included/actions/pages/slider_load/update with storage mc:data temp.slider_load
