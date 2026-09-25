@@ -110,8 +110,8 @@ data modify storage mc:data load set value \
                                     x: 75           ,\
                                     y: 10           ,\
                                                      \
-                                    width: 50       ,\
-                                    height: 25      ,\
+                                    width: 0       ,\
+                                    height: 0      ,\
                                                      \
                                     depth: 50       ,\
                                     edge_margin: 5 },\
@@ -122,7 +122,7 @@ data modify storage mc:data load set value \
                                         depth: 6                     ,\
                                                                       \
                                         text: "THIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA"                  ,\
-                                        scale: "0525"                ,\
+                                        scale: "02625"                ,\
                                         background_color: "white"    ,\
                                         highlight_color: "green"     ,\
                                         opacity: 255                 ,\
@@ -142,8 +142,8 @@ data modify storage mc:data load set value \
                                     x: 75           ,\
                                     y: 10           ,\
                                                      \
-                                    width: 50       ,\
-                                    height: 25      ,\
+                                    width: 0       ,\
+                                    height: 0      ,\
                                                      \
                                     depth: 50       ,\
                                     edge_margin: 5 },\
@@ -154,7 +154,7 @@ data modify storage mc:data load set value \
                                         depth: 6                     ,\
                                                                       \
                                         text: "THIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA"                  ,\
-                                        scale: "0525"                ,\
+                                        scale: "02625"                ,\
                                         background_color: "white"    ,\
                                         highlight_color: "green"     ,\
                                         opacity: 255                 ,\
@@ -174,8 +174,8 @@ data modify storage mc:data load set value \
                                     x: 75           ,\
                                     y: 10           ,\
                                                      \
-                                    width: 50       ,\
-                                    height: 25      ,\
+                                    width: 0       ,\
+                                    height: 0      ,\
                                                      \
                                     depth: 50       ,\
                                     edge_margin: 5 },\
@@ -186,7 +186,7 @@ data modify storage mc:data load set value \
                                         depth: 6                     ,\
                                                                       \
                                         text: "THIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA"                  ,\
-                                        scale: "0525"                ,\
+                                        scale: "02625"                ,\
                                         background_color: "white"    ,\
                                         highlight_color: "green"     ,\
                                         opacity: 255                 ,\
@@ -205,8 +205,8 @@ data modify storage mc:data load set value \
                                     x: 75           ,\
                                     y: 10           ,\
                                                      \
-                                    width: 50       ,\
-                                    height: 25      ,\
+                                    width: 0       ,\
+                                    height: 0      ,\
                                                      \
                                     depth: 50       ,\
                                     edge_margin: 5 },\
@@ -217,7 +217,7 @@ data modify storage mc:data load set value \
                                         depth: 6                     ,\
                                                                       \
                                         text: "THIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA"                  ,\
-                                        scale: "0525"                ,\
+                                        scale: "02625"                ,\
                                         background_color: "white"    ,\
                                         highlight_color: "green"     ,\
                                         opacity: 255                 ,\
