@@ -5,6 +5,7 @@ function mc:main/gui/kill/all
 data modify storage mc:data load set value \
 {\
         type: "main", \
+        init_page: 3,\
         \
         background:{\
                              \

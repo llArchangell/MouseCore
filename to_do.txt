@@ -1,3 +1,2 @@
-init page load
 order rework
 add back hover + edge triggers
