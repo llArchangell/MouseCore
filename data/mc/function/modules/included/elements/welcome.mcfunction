@@ -5,7 +5,7 @@ function mc:main/gui/kill/all
 data modify storage mc:data load set value \
 {\
         type: "main", \
-        init_page: 3,\
+        current_page: 3,\
         \
         background:{\
                              \
@@ -54,9 +54,9 @@ data modify storage mc:data load set value \
                                 init_x: 180, init_y:225                                      ,\
                                                                                               \
                                 action_list:[\
-                                {module:"included",action:"slider/return_value/",settings:{axis:y}},\
-                                {module:"included",action:"pages/slider_old",settings:{old:y_value_old}}  ,\
-                                {module:"included",action:"pages/slider_new",settings:{new:y_value}}]      \
+                                {module:"included",action:"pages/old",settings:"with storage mc:data temp"},\
+                                {module:"included",action:"slider/return_value/",settings:{axis:y,returned_value:"current_page"}},\
+                                {module:"included",action:"pages/new",settings:"with storage mc:data temp"}]\
                                 }]\
                             }],\
 \

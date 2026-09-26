@@ -3,8 +3,8 @@
 $data modify storage mc:data temp.insertion set value {id:$(id)}
 $data remove storage mc:data temp.elements[{id:$(id)}]
 
-##depth init
-$execute as @n[scores={mc.data=$(id)}] run function mc:main/gui/setup/set_depth/init
+# ##depth init
+# $execute as @n[scores={mc.data=$(id)}] run function mc:main/gui/setup/set_depth/init
 
 ##setup loop / return if only one element
 $execute unless data storage mc:data temp.elements[0] run return run data modify storage mc:data temp.elements append value {id:$(id)}
