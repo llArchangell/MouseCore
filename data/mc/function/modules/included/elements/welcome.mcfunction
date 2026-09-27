@@ -6,6 +6,7 @@ data modify storage mc:data load set value \
 {\
         type: "main", \
         current_page: 3,\
+        old_page: 3,\
         \
         background:{\
                              \
@@ -54,9 +55,8 @@ data modify storage mc:data load set value \
                                 init_x: 180, init_y:225                                      ,\
                                                                                               \
                                 action_list:[\
-                                {module:"included",action:"pages/old",settings:"with storage mc:data temp"},\
                                 {module:"included",action:"slider/return_value/",settings:{axis:y,returned_value:"current_page"}},\
-                                {module:"included",action:"pages/new",settings:"with storage mc:data temp"}]\
+                                {module:"included",action:"pages/load",settings:"with storage mc:data temp"},]\
                                 }]\
                             }],\
 \
