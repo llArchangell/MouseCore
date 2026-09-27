@@ -1,5 +1,5 @@
 ##get layer of current element
-$execute store result score #mc.gui.sort_ mc.data run data get entity @n[type=text_display,tag=mc.gui,limit=1,distance=..5,scores={mc.data=$(id)}] data.layer
+$execute store result score #mc.gui.sort_ mc.data run data get storage mc:data elements[{id:$(id)}].background.layer
 
 ##get score
 execute if score #mc.gui.sort mc.data < #mc.gui.sort_ mc.data run scoreboard players add #mc.gui.sort.insert mc.data 1

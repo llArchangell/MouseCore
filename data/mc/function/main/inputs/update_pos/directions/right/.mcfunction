@@ -17,4 +17,3 @@ execute if score #mc.mouse.x mc.data <= #mc.gui.screen_bounds mc.data store resu
 
 ##store new pos
 execute store result storage mc:data input.mouse.x float 0.001 run scoreboard players get #mc.mouse.x mc.data
-

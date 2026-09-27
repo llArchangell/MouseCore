@@ -1,1 +1,1 @@
-$data modify storage mc:data temp.elements insert $(index) value {id:$(id)}
+$data modify storage mc:data order insert $(index) from storage mc:data elements[{id:$(id)}]

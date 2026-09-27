@@ -1,4 +1,4 @@
-function mc:main/inputs/check_interactions/gui/check_layer/sort/append with entity @s data
+$function mc:main/inputs/check_interactions/gui/check_layer/sort/append {id:$(id)}
 
 data modify storage mc:data temp.set_drag set value []
 $data modify storage mc:data temp.set_drag set from storage mc:data elements[{id:$(id)}]

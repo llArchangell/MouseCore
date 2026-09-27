@@ -1,5 +1,5 @@
-##kill all
-function mc:main/gui/kill/all
+# ##kill all
+# function mc:main/gui/kill/all
 
 ##setup datas
 data modify storage mc:data load set value \
@@ -272,4 +272,3 @@ data modify storage mc:data load set value \
 
 ##load entity
 execute positioned ^ ^ ^.5 summon text_display run function mc:main/gui/setup/ with storage mc:data load
-
