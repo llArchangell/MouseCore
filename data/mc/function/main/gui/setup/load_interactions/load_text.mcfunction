@@ -12,7 +12,7 @@ $data merge entity @s {\
     billboard: "center"                      ,\
     background: 0                            ,\
     teleport_duration: 1                     ,\
-    interpolation_duration: 0                ,\
+    interpolation_duration: 1                ,\
     \
     transformation:{\
     left_rotation:  [0f,0f,0f,1f]                         ,\
