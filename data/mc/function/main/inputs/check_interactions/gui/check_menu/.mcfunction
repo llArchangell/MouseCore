@@ -1,5 +1,5 @@
-
 execute as @e[type=text_display,tag=mc.gui.current,limit=1,distance=..5] run return fail
+data modify storage mc:data current_action set value {}
 
 $function mc:main/inputs/check_interactions/gui/check_menu/loop with storage mc:data elements[{id:$(id)}].background
 
