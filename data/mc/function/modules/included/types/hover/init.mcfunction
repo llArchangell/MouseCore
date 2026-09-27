@@ -9,3 +9,4 @@ data modify storage mc:data temp.clear_hover.list set from storage mc:data load.
 $data modify storage mc:data temp.clear_hover.id set value $(current_element)
 
 $data modify storage mc:data elements[{id:$(current_element)}].interaction append from storage mc:data load.interaction[]
+$execute as @n[scores={mc.data=$(current_element)}] run function mc:main/gui/setup/set_depth/init {id:$(current_element)}

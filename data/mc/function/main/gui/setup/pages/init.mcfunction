@@ -10,3 +10,5 @@ $tag @n[type=text_display,limit=1,tag=mc.gui,scores={mc.data=$(current_element)}
 
 $data modify storage mc:data elements[{id:$(current_element)}].pages[$(current_page)].interaction set from storage mc:data load.interaction
 $data modify storage mc:data elements[{id:$(current_element)}].interaction append from storage mc:data load.interaction[]
+
+$execute as @n[scores={mc.data=$(current_element)}] run function mc:main/gui/setup/set_depth/init {id:$(current_element)}
