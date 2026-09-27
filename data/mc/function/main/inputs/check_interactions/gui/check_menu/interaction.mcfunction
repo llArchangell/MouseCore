@@ -27,11 +27,15 @@ $scoreboard players add #mc.temp.gui.max_y mc.data $(height)
 execute if score #mc.mouse.y mc.data > #mc.temp.gui.max_y mc.data run return run function mc:main/inputs/check_interactions/gui/check_menu/next_interaction
 
 ####found interaction
+scoreboard players set #mc.gui.looking_interaction mc.data 1
+
 execute as 3c69601e-49ad-44ce-b75b-44196417ede6 on passengers run data modify entity @s text.color set value "gold"
 data modify storage mc:data temp.current_element set from storage mc:data current_action.id
 data modify storage mc:data current_action set from storage mc:data temp.list[0]
 
 function mc:main/inputs/check_interactions/gui/highlight/set with storage mc:data current_action
+
+execute if data storage mc:data current_action.action[{type:hover}] run function mc:modules/included/types/hover/ with storage mc:data current_action.action[{type:hover}].settings
 
 # ##triggers = hover, edge,
 # execute if data storage mc:data temp_current_action.actions[{type:"hover"}] run function mc:main/inputs/trigger/hover/

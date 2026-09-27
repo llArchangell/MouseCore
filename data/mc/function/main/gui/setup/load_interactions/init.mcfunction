@@ -1,5 +1,4 @@
 
-
 data modify storage mc:data temp.list set value []
 data modify storage mc:data temp.list set from storage mc:data load.interaction
 data remove storage mc:data load.interaction 

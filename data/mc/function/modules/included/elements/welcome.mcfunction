@@ -96,9 +96,49 @@ data modify storage mc:data load set value \
                                 type: "button"                                               ,\
                                 settings: {}                                                 ,\
                                 action_list:[                                                 \
-                                {module:"included",action:"close_gui",settings:"{}"}         ,\
-                                {module:"included",action:"test",settings:"{}"}]             ,\
-                                }] \
+                                {module:"included",action:"close_gui",settings:"{}"}]        ,\
+                                }                                                            ,\
+                                {                                                             \
+                                module: "included"                                           ,\
+                                type: "hover"                                                ,\
+                                settings: {load_timer:10}                                    ,\
+                                    interaction:[{\
+                                        type: "interaction", \
+                                \
+                                        background:{\
+                                            background_color: "black"  ,\
+                                            highlight_color: "dark_gray"  ,\
+                                            opacity: 100    ,\
+                                            x: 75           ,\
+                                            y: 50           ,\
+                                                            \
+                                            width: 50       ,\
+                                            height: 25      ,\
+                                                             \
+                                            depth: 50       ,\
+                                            edge_margin: 5 },\
+                                \
+                                    text:{\
+                                        x: 100                       ,\
+                                        y: 56                        ,\
+                                        depth: 6                     ,\
+                                                                      \
+                                        text: "Ok!"                  ,\
+                                        scale: "0525"                ,\
+                                        background_color: "white"    ,\
+                                        highlight_color: "green"     ,\
+                                        opacity: 255                 ,\
+                                        alignment: "center"          ,\
+                                        line_width: 100              ,\
+                                        },\
+                                    action:[\
+                                        {trigger:{left_release:true},\
+                                        type:button,\
+                                        settings:{}, \
+                                        module:"included",\
+                                        action_list:[{module:"included",action:"close_gui",settings:"{}"}]},\
+                                    ],\
+                                }]}], \
                             },\
                             {\
                                 type: "interaction", \
