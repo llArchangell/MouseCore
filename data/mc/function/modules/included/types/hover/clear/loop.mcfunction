@@ -1,4 +1,3 @@
-say kill
 $data remove storage mc:data elements[{id:$(current_element)}].interaction[{id:$(id)}]
 $execute as @n[type=text_display,limit=1,scores={mc.data=$(id)},distance=..2] run function mc:main/gui/kill/interaction
 

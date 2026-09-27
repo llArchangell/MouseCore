@@ -110,7 +110,7 @@ data modify storage mc:data load set value \
                                             highlight_color: "dark_gray"  ,\
                                             opacity: 100    ,\
                                             x: 75           ,\
-                                            y: 50           ,\
+                                            y: 30           ,\
                                                             \
                                             width: 50       ,\
                                             height: 25      ,\
@@ -120,7 +120,7 @@ data modify storage mc:data load set value \
                                 \
                                     text:{\
                                         x: 100                       ,\
-                                        y: 56                        ,\
+                                        y: 36                        ,\
                                         depth: 6                     ,\
                                                                       \
                                         text: "Ok!"                  ,\

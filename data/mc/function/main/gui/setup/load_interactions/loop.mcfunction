@@ -1,4 +1,3 @@
-say b
 
 ##set background entity data
 $data merge entity @s {\
