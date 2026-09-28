@@ -41,8 +41,8 @@ data modify storage mc:data load set value \ //when you create a new menu / add 
             origin_x: 100   ,\            //defines the base x value where the menu is spawned
             origin_y: -100  ,\            //defines the base y value where the menu is spawned
                              \
-            width: 10       ,\            //defines the width of the background
-            height: 20      ,\            //defines the height of the height
+            width: 10       ,\            //defines the width of the background from x, always expand to the right
+            height: 20      ,\            //defines the height of the background from y, always expand upward
                              \
             layer: 0        ,\            //defines the priority when interacting with a menu, a higher value on top of a lesser will always be chosen
             depth: 1       },\            //depth defines the z value of your menus, this is mainly used to display menus on top of each other clearly
@@ -53,18 +53,7 @@ data modify storage mc:data load set value \ //when you create a new menu / add 
         interaction: [{\        //first, you also need a background array to define the interaction size / looks, this is identical to what's above
                                 type: "interaction", \
                                 \
-                                background:{\
-                                    background_color: "dark_gray"  ,\
-                                    highlight_color: "gray"        ,\
-                                    opacity: 255    ,\
-                                    x:180           ,\
-                                    y:225           ,\
-                                                     \
-                                    width:8         ,\
-                                    height:16       ,\
-                                                     \
-                                    depth:50       },\
-                                \
+                                background:{...}\ //identical to above
                                 \
                                 //to which you can add text, this part is optional and works with its own datas
                                 text:{\
@@ -96,7 +85,8 @@ data modify storage mc:data load set value \ //when you create a new menu / add 
                                 settings:{}}]\                  //the data you want to call the function with
                                 }],\
                             }],\
-        \///then optionaly, you can add pages
+                            
+        \///(optional) pages
         \///pages works just like your interaction[] list and need the same data, it is structured like so:
         pages:[\
         {interaction:[{interaction_1},{interaction_2},...]},\
