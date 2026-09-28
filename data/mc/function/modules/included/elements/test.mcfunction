@@ -1,80 +1,274 @@
-# # ##temp kill so we always with one menu for now
-# execute as @n[tag=mc.gui] on passengers on passengers run kill @s
-# execute as @n[tag=mc.gui] on passengers run kill @s
-# kill @n[tag=mc.gui]
-# function mc:main/gui/kill_all
-##summon entity / set menu data
+# ##kill all
+# function mc:main/gui/kill/all
 
-execute positioned ^ ^ ^.5 run summon text_display ~ ~ ~ \
+##setup datas
+data modify storage mc:data load set value \
 {\
-    text:{text:"\uE000",font:"mc:ui/background_generic",color:black},\
-    text_opacity:150, \
-    Tags:\
-        [\
-        "mc.gui",\
-        "mc.gui.setup",\
-        "mc.gui.dragable",\
-        ],\
-    \
-    data:\
-        {\
-        x: 0 ,\
-        y: 0 ,\
-        origin_x: 0 ,\
-        origin_y: 0 ,\
+        type: "main", \
+        current_page: 3,\
+        old_page: 3,\
         \
-        edge_margin: 10,\
+        background:{\
+                             \
+            opacity: 100    ,\
+            background_color: "black"  ,\
+                             \
+            x: 0            ,\
+            y: 0            ,\
+            origin_x: 100   ,\
+            origin_y: -100  ,\
+                             \
+            width: 200      ,\
+            height: 300     ,\
+                             \
+            layer: 0        ,\
+            depth: 1        ,\
+            edge_margin: 0 },\
         \
-        layer: 0 ,\
-        depth: 0,\
-        \
-        width: 100 ,\
-        height: 100 ,\
-        \
-        x_offset: 0 ,\
-        y_offset: 0 ,\
-        interaction: [\
-                            {\
-                            text:{x:-94,y:89,depth:6,display: "x",scale:"0525", background_color:"red" , text_color:"dark_gray", highlight_color: "white"},\
-                            id: 0, x:-90,y:90, width:10,height:10,depth:1,edge_margin: 5, \
-                            action:[\
-                                {trigger:{left_release:true}, type: "button", \
-                                    actions:[\
-                                        {module: included, action: "close_gui"},\
-                                        {module: included, action: "test"}\
-                                        ]\
-                                },\
-                                    ] \
+        interaction: [{\
+                                type: "interaction", \
                                 \
+                                background:{\
+                                    background_color: "dark_gray"  ,\
+                                    highlight_color: "gray"        ,\
+                                    opacity: 255    ,\
+                                    x:180           ,\
+                                    y:225           ,\
+                                                     \
+                                    width:8         ,\
+                                    height:16       ,\
+                                                     \
+                                    depth:50        ,\
+                                    edge_margin: 5 },\
+                                \
+                                \
+                                action:[{                                                     \
+                                trigger:{"left_hold":true}                                   ,\
+                                module: "included"                                           ,\
+                                type: "slider"                                               ,\
+                                settings: "with storage mc:data temp"                        ,\
+                                                                                              \
+                                direction:{up:true,down:true}                                ,\
+                                x:0, y:50,                                                    \
+                                max_y:3, max_x:0                                             ,\
+                                width:0, height:225                                          ,\
+                                init_x: 180, init_y:225                                      ,\
+                                                                                              \
+                                action_list:[\
+                                {module:"included",action:"slider/return_value/",settings:{axis:y,returned_value:"current_page"}},\
+                                {module:"included",action:"pages/load",settings:"with storage mc:data temp"},]\
+                                }]\
+                            }],\
+\
+        pages:[{interaction:[{\
+                                type: "interaction", \
+                                \
+                                background:{\
+                                    background_color: "black"  ,\
+                                    highlight_color: "dark_gray"  ,\
+                                    opacity: 100    ,\
+                                    x: 75           ,\
+                                    y: 10           ,\
+                                                     \
+                                    width: 50       ,\
+                                    height: 25      ,\
+                                                     \
+                                    depth: 50       ,\
+                                    edge_margin: 5 },\
+                                \
+                                    text:{\
+                                        x: 100                       ,\
+                                        y: 16                        ,\
+                                        depth: 6                     ,\
+                                                                      \
+                                        text: "Ok!"                  ,\
+                                        scale: "0525"                ,\
+                                        background_color: "white"    ,\
+                                        highlight_color: "green"     ,\
+                                        opacity: 255                 ,\
+                                        alignment: "center"          ,\
+                                        line_width: 100              ,\
+                                        },\
+                                \
+                                action:[{                                                     \
+                                trigger:{"left_release":true}                                ,\
+                                module: "included"                                           ,\
+                                type: "button"                                               ,\
+                                settings: {}                                                 ,\
+                                action_list:[                                                 \
+                                {module:"included",action:"close_gui",settings:"{}"}]        ,\
+                                }                                                            ,\
+                                {                                                             \
+                                module: "included"                                           ,\
+                                type: "hover"                                                ,\
+                                settings: {load_timer:10}                                    ,\
+                                    interaction:[{\
+                                        type: "interaction", \
+                                \
+                                        background:{\
+                                            background_color: "black"  ,\
+                                            highlight_color: "dark_gray"  ,\
+                                            opacity: 100    ,\
+                                            x: 75           ,\
+                                            y: 30           ,\
+                                                            \
+                                            width: 50       ,\
+                                            height: 25      ,\
+                                                             \
+                                            depth: 50       ,\
+                                            edge_margin: 5 },\
+                                \
+                                    text:{\
+                                        x: 100                       ,\
+                                        y: 36                        ,\
+                                        depth: 6                     ,\
+                                                                      \
+                                        text: "Ok!"                  ,\
+                                        scale: "0525"                ,\
+                                        background_color: "white"    ,\
+                                        highlight_color: "green"     ,\
+                                        opacity: 255                 ,\
+                                        alignment: "center"          ,\
+                                        line_width: 100              ,\
+                                        },\
+                                    action:[\
+                                        {trigger:{left_release:true},\
+                                        type:button,\
+                                        settings:{}, \
+                                        module:"included",\
+                                        action_list:[{module:"included",action:"pages/set_id",settings:{current_page:1}},{module:"included",action:"pages/load",settings:"with storage mc:data temp"}]},\
+                                    ],\
+                                }]}], \
                             },\
-                            \
                             {\
-                            text:{x:4,y:0,depth:6,display: "x",scale:"0525", background_color:"red" , text_color:"dark_gray", highlight_color: "white"},\
-                            id: 0, x:0,y:0, width:10,height:10,depth:1,edge_margin: 5, \
-                            action:[\
-                                {trigger:{left_release:true}, type: "button", actions:[{module: included, action: "close_gui"}]},\
-                                    ] \
-                            },\
-                     ],\
-        },\
-    \
-    view_range: 9999f ,\
-    billboard: "center" ,\
-    background: 0 ,\
-    teleport_duration: 1 ,\
-    interpolation_duration: 0 ,\
-    transformation:\
-    {\
-    left_rotation:  [0f,0f,0f,1f],\
-    right_rotation: [0f,0f,0f,1f],\
-    scale:          [0f,0f,0f],\
-    translation:    [0f,0f,0f]\
-    },\
-    \
-    Passengers:\
-        [\
-        ]\
+                                type: "interaction", \
+                                \
+                                background:{\
+                                    background_color: "black"  ,\
+                                    highlight_color: "dark_gray"  ,\
+                                    opacity: 0      ,\
+                                    x: 75           ,\
+                                    y: 10           ,\
+                                                     \
+                                    width: 0       ,\
+                                    height: 0      ,\
+                                                     \
+                                    depth: 50       ,\
+                                    edge_margin: 5 },\
+                                \
+                                    text:{\
+                                        x: 100                       ,\
+                                        y: 60                        ,\
+                                        depth: 6                     ,\
+                                                                      \
+                                        text: "THIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA"                  ,\
+                                        scale: "02625"                ,\
+                                        background_color: "white"    ,\
+                                        highlight_color: "green"     ,\
+                                        opacity: 255                 ,\
+                                        alignment: "left"          ,\
+                                        line_width: 100              ,\
+                                        },\
+                                \
+                                action:[]\
+                            }]},\
+                            {interaction:[{\
+                                type: "interaction", \
+                                \
+                                background:{\
+                                    background_color: "black"  ,\
+                                    highlight_color: "dark_gray"  ,\
+                                    opacity: 0      ,\
+                                    x: 75           ,\
+                                    y: 10           ,\
+                                                     \
+                                    width: 0       ,\
+                                    height: 0      ,\
+                                                     \
+                                    depth: 50       ,\
+                                    edge_margin: 5 },\
+                                \
+                                    text:{\
+                                        x: 100                       ,\
+                                        y: 60                        ,\
+                                        depth: 6                     ,\
+                                                                      \
+                                        text: "THIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA"                  ,\
+                                        scale: "02625"                ,\
+                                        background_color: "white"    ,\
+                                        highlight_color: "green"     ,\
+                                        opacity: 255                 ,\
+                                        alignment: "left"          ,\
+                                        line_width: 100              ,\
+                                        },\
+                                \
+                                action:[]\
+                            }]},\
+                            {interaction:[{\
+                                type: "interaction", \
+                                \
+                                background:{\
+                                    background_color: "black"  ,\
+                                    highlight_color: "dark_gray"  ,\
+                                    opacity: 0      ,\
+                                    x: 75           ,\
+                                    y: 10           ,\
+                                                     \
+                                    width: 0       ,\
+                                    height: 0      ,\
+                                                     \
+                                    depth: 50       ,\
+                                    edge_margin: 5 },\
+                                \
+                                    text:{\
+                                        x: 100                       ,\
+                                        y: 60                        ,\
+                                        depth: 6                     ,\
+                                                                      \
+                                        text: "THIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA"                  ,\
+                                        scale: "02625"                ,\
+                                        background_color: "white"    ,\
+                                        highlight_color: "green"     ,\
+                                        opacity: 255                 ,\
+                                        alignment: "left"          ,\
+                                        line_width: 100              ,\
+                                        },\
+                                \
+                                action:[]\
+                            }]},{interaction:[{\
+                                type: "interaction", \
+                                \
+                                background:{\
+                                    background_color: "black"  ,\
+                                    highlight_color: "dark_gray"  ,\
+                                    opacity: 0      ,\
+                                    x: 75           ,\
+                                    y: 10           ,\
+                                                     \
+                                    width: 0       ,\
+                                    height: 0      ,\
+                                                     \
+                                    depth: 50       ,\
+                                    edge_margin: 5 },\
+                                \
+                                    text:{\
+                                        x: 100                       ,\
+                                        y: 60                        ,\
+                                        depth: 6                     ,\
+                                                                      \
+                                        text: "THIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA\n\nTHIS IS SOME TEST TO DISPLAY LALALALALALALALLALALALALALA"                  ,\
+                                        scale: "02625"                ,\
+                                        background_color: "white"    ,\
+                                        highlight_color: "green"     ,\
+                                        opacity: 255                 ,\
+                                        alignment: "left"          ,\
+                                        line_width: 100              ,\
+                                        },\
+                                \
+                                action:[]\
+                            }]}],\
+        \
 }
 
-##init setup functions
-execute as @n[type=text_display,tag=mc.gui.setup,limit=1,distance=..5] at @s run function mc:main/gui/setup/ with entity @s data
+##load entity
+execute positioned ^ ^ ^.5 summon text_display run function mc:main/gui/setup/ with storage mc:data load
