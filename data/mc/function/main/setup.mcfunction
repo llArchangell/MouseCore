@@ -11,7 +11,7 @@ execute as 3c69601e-49ad-44ce-b75b-44196417ede6 on passengers run kill @s
 kill 3c69601e-49ad-44ce-b75b-44196417ede6
 summon text_display ~ ~ ~ {\
 UUID:[I;1013538846,1236092110,-1218755559,1679289830],\
-Passengers:[{id:text_display,text:{text:"\uE000",font:"mc:included/background_generic",color:white},\
+Passengers:[{id:text_display,text:{text:"\uE000",font:"mc:included/cursor",color:white},\
 teleport_duration:1,\
 billboard:center,\
 background:0,\
@@ -20,7 +20,7 @@ transformation:\
     {\
     left_rotation:[0f,0f,0f,1f],\
     right_rotation:[0f,0f,0f,1f],\
-    scale:[.125f,.125f,.125f],\
+    scale:[.025f,.025f,.025f],\
     translation:[-.00125f,-.00125f,0.0009f]\
     }}],\
     \
@@ -48,6 +48,6 @@ scoreboard players set #mc.input.strength mc.data 0
 scoreboard players set #mc.input.diff_x mc.data 0
 scoreboard players set #mc.input.diff_y mc.data 0
 
-execute as @a on vehicle at @s run function mc:modules/included/elements/welcome
+# execute as @a on vehicle at @s run function mc:modules/included/elements/welcome
 
 function mc:main/inputs/sensibility/default
