@@ -1,4 +1,3 @@
-kill @e[type=text_display]
 kill a1baddfe-1630-42e9-9d9c-2ef228025af8 
 summon text_display ~ ~.60 ~ {\
     UUID:[I;-1581588994,372261609,-1650708750,671243000],\
