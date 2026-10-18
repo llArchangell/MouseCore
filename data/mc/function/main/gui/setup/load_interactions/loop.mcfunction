@@ -6,7 +6,7 @@ $data merge entity @s {\
     \
     text:{\
         text: "\uE000"                   ,\
-        font: "mc:ui/background_generic" ,\
+        font: "mc:included/background_generic" ,\
         color: "$(background_color)"}               ,\
     \
     text_opacity: $(opacity)  ,\

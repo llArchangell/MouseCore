@@ -11,7 +11,7 @@ execute as 3c69601e-49ad-44ce-b75b-44196417ede6 on passengers run kill @s
 kill 3c69601e-49ad-44ce-b75b-44196417ede6
 summon text_display ~ ~ ~ {\
 UUID:[I;1013538846,1236092110,-1218755559,1679289830],\
-Passengers:[{id:text_display,text:{text:"\uE000",font:"mc:ui/background_generic",color:white},\
+Passengers:[{id:text_display,text:{text:"\uE000",font:"mc:included/background_generic",color:white},\
 teleport_duration:1,\
 billboard:center,\
 background:0,\
