@@ -32,9 +32,8 @@ ride @s mount @n[limit=1,type=text_display,distance=..10,tag=mc.gui.setup]
 function mc:main/gui/setup/get_id {target:"temp.list[0]"}
 
 ##set interaction size + translation
-function mc:main/gui/setup/set_size with storage mc:data temp.list[0].background
-function mc:main/gui/setup/set_translation/x with storage mc:data temp.list[0].background
-function mc:main/gui/setup/set_translation/y with storage mc:data temp.list[0].background
+execute unless data storage mc:data temp.list[0].background.custom run function mc:main/gui/setup/load_interactions/transformations
+execute if data storage mc:data temp.list[0].background.custom run function mc:main/gui/setup/custom/interaction with storage mc:data temp.list[0].background.custom
 
 tag @s add mc.gui.interaction_setup
 execute if data storage mc:data temp.list[0].text summon text_display run function mc:main/gui/setup/load_interactions/load_text with storage mc:data temp.list[0].text

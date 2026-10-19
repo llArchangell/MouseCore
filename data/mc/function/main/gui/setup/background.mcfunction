@@ -30,11 +30,14 @@ $data merge entity @s {\
 ##set background init pos
 execute as @a on vehicle at @s as @n[tag=mc.gui.setup] run function mc:main/inputs/update_pos/init with storage mc:data load
 
-##set background size
-function mc:main/gui/setup/set_size with storage mc:data load.background
-
 ##set layer
 $scoreboard players set @s mc.gui_layer $(layer)
 
 ##set background id
 function mc:main/gui/setup/get_id {target:load}
+
+
+##set background size
+execute if data storage mc:data load.background.custom run return run function mc:main/gui/setup/custom/background with storage mc:data load.background.custom
+
+function mc:main/gui/setup/set_size with storage mc:data load.background

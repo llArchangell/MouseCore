@@ -48,6 +48,6 @@ scoreboard players set #mc.input.strength mc.data 0
 scoreboard players set #mc.input.diff_x mc.data 0
 scoreboard players set #mc.input.diff_y mc.data 0
 
-# execute as @a on vehicle at @s run function mc:modules/included/elements/welcome
+execute as @a on vehicle at @s run function mc:modules/included/elements/welcome
 
 function mc:main/inputs/sensibility/default
