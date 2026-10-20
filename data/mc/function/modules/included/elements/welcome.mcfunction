@@ -10,15 +10,8 @@ data modify storage mc:data load set value \
         \
         background:{\
                              \
-            opacity: 255    ,\
-            background_color: "white"  ,\
-            custom: {\
-                text:{text:"\uE000",font:"mc:included/test"}, \
-                width:  3 ,\
-                height: 3 ,\
-                x: 100    ,\
-                y: 100    ,\
-                }           ,\
+            opacity: 100    ,\
+            background_color: "black"  ,\
                              \
             x: 0            ,\
             y: 0            ,\

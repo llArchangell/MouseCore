@@ -1,5 +1,7 @@
+
 ##load main entity
 function mc:main/gui/setup/background with storage mc:data load.background
+execute if data storage mc:data load{dragable : true} run tag @s add mc.gui.dragable
 
 ##load interactions + their texts
 tag @s add mc.gui.setup

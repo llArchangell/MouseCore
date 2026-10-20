@@ -21,7 +21,7 @@ execute if score #mc.mouse.y mc.data > #mc.temp.gui.max_y mc.data run return fai
 
 ########found menu
 data modify storage mc:data current_action set from storage mc:data temp.order[0]
-execute as 3c69601e-49ad-44ce-b75b-44196417ede6 on passengers run data modify entity @s text.color set value "aqua"
+execute if entity @s[tag=mc.gui.dragable] as 3c69601e-49ad-44ce-b75b-44196417ede6 on passengers run data modify entity @s text.color set value "aqua"
 tag @s add mc.gui.current
 
 

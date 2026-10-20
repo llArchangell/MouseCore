@@ -3,8 +3,7 @@ $data merge entity @s {\
 \
     Tags:[\
         "mc.gui"           ,\
-        "mc.gui.setup"     ,\
-        "mc.gui.dragable" ],\
+        "mc.gui.setup"    ],\
     \
     text:{\
         text: "\uE000"                  ,\
