@@ -4,6 +4,7 @@ data modify storage mc:data temp.set_drag set value []
 $data modify storage mc:data temp.set_drag set from storage mc:data elements[{id:$(id)}]
 
 tag @s add mc.gui.dragging
+execute as 3c69601e-49ad-44ce-b75b-44196417ede6 on passengers run data modify entity @s text.text set value "\uE003"
 
 execute store result score #mc.gui.drag.old_offset_x mc.data run data get storage mc:data temp.set_drag.background.origin_x
 scoreboard players operation #mc.gui.drag.old_offset_x mc.data -= #mc.mouse.x mc.data

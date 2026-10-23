@@ -29,7 +29,7 @@ execute if score #mc.mouse.y mc.data > #mc.temp.gui.max_y mc.data run return run
 ####found interaction
 scoreboard players set #mc.gui.looking_interaction mc.data 1
 
-execute as 3c69601e-49ad-44ce-b75b-44196417ede6 on passengers run data modify entity @s text.color set value "gold"
+execute as 3c69601e-49ad-44ce-b75b-44196417ede6 on passengers run data modify entity @s text.text set value "\uE001"
 data modify storage mc:data temp.current_element set from storage mc:data current_action.id
 data modify storage mc:data current_action set from storage mc:data temp.list[0]
 

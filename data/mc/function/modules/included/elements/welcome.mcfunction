@@ -5,6 +5,7 @@
 data modify storage mc:data load set value \
 {\
         type: "main", \
+        dragable : true ,\
         current_page: 3,\
         old_page: 3,\
         \
