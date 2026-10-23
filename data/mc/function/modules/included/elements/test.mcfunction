@@ -1,5 +1,4 @@
-# ##kill all
-# function mc:main/gui/kill/all
+
 
 ##setup datas
 data modify storage mc:data load set value \
@@ -37,13 +36,21 @@ data modify storage mc:data load set value \
                                 type: "interaction", \
                                 \
                                 background:{\
-                                    background_color: "dark_gray"  ,\
+                                    background_color: "white"  ,\
                                     highlight_color: "gray"        ,\
+                                    custom: {\
+                                        text:{text:"\uE001",font:"mc:included/test"}, \
+                                        width:  3 ,\
+                                        height: 3 ,\
+                                        x: 49    ,\
+                                        y: 116    ,\
+                                            },\
+                                    \
                                     opacity: 255    ,\
-                                    x:65           ,\
-                                    y:70           ,\
+                                    x:55            ,\
+                                    y:60            ,\
                                                      \
-                                    width:20         ,\
+                                    width:20        ,\
                                     height:20       ,\
                                                      \
                                     depth:50        ,\
@@ -63,16 +70,26 @@ data modify storage mc:data load set value \
                                         line_width: 200              ,\
                                         },\
                                 \
-                                \
-                                action:[]\
+                                action:[{                                                     \
+                                trigger:{"left_release":true}                                ,\
+                                module: "included", type: "button",settings: {}              ,\
+                                action_list:[{module:"included",action:"close_gui",settings:"{}"}]}]\
                             },{\
                                 type: "interaction", \
                                 \
                                 background:{\
-                                    background_color: "dark_gray"  ,\
+                                    background_color: "white"  ,\
                                     highlight_color: "gray"        ,\
+                                    custom: {\
+                                        text:{text:"\uE002",font:"mc:included/test"}, \
+                                        width:  3 ,\
+                                        height: 3 ,\
+                                        x: 49    ,\
+                                        y: 116    ,\
+                                            },\
+                                    \
                                     opacity: 255    ,\
-                                    x:80           ,\
+                                    x:65           ,\
                                     y:40           ,\
                                                      \
                                     width:20         ,\
@@ -89,22 +106,33 @@ data modify storage mc:data load set value \
                                         text: "Please tell me more!"                  ,\
                                         scale: "0525"                ,\
                                         background_color: "white"    ,\
-                                        highlight_color: "green"     ,\
+                                        highlight_color: "gold"     ,\
                                         opacity: 255                 ,\
                                         alignment: "left"          ,\
                                         line_width: 200              ,\
                                         },\
                                 \
-                                action:[]\
+                                action:[{                                                     \
+                                trigger:{"left_release":true}                                ,\
+                                module: "included", type: "button",settings: {}              ,\
+                                action_list:[{module:"included",action:"close_gui",settings:"{}"}]}]\
                             },{\
                                 type: "interaction", \
                                 \
                                 background:{\
-                                    background_color: "dark_gray"  ,\
+                                    background_color: "white"  ,\
                                     highlight_color: "gray"        ,\
+                                    custom: {\
+                                        text:{text:"\uE003",font:"mc:included/test"}, \
+                                        width:  3 ,\
+                                        height: 3 ,\
+                                        x: 49    ,\
+                                        y: 116    ,\
+                                            },\
+                                    \
                                     opacity: 255    ,\
-                                    x:65           ,\
-                                    y:10           ,\
+                                    x:55           ,\
+                                    y:20           ,\
                                                      \
                                     width:20         ,\
                                     height:20       ,\
@@ -120,13 +148,16 @@ data modify storage mc:data load set value \
                                         text: "I am an evil psycopath with no mercy."                  ,\
                                         scale: "0525"                ,\
                                         background_color: "white"    ,\
-                                        highlight_color: "green"     ,\
+                                        highlight_color: "dark_red"     ,\
                                         opacity: 255                 ,\
                                         alignment: "left"          ,\
                                         line_width: 200              ,\
                                         },\
                                 \
-                                action:[]\
+                                action:[{                                                     \
+                                trigger:{"left_release":true}                                ,\
+                                module: "included", type: "button",settings: {}              ,\
+                                action_list:[{module:"included",action:"close_gui",settings:"{}"}]}]\
                             }],\
 \
         pages:[],\

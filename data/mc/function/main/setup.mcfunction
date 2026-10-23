@@ -35,20 +35,26 @@ execute on vehicle store result score #mc.input.old_rot_x mc.data run data get e
 execute on vehicle store result score #mc.input.old_rot_y mc.data run data get entity @s Rotation[1] 100
 
 ##reset scores
-scoreboard players set #mc.input.x mc.data 0
-scoreboard players set #mc.input.y mc.data 0
+scoreboard players set #mc.mouse.x mc.data 0
+scoreboard players set #mc.mouse.y mc.data 0
+
+scoreboard players set #mc.mouse.rot_x mc.data 0
+scoreboard players set #mc.mouse.old_rot_x mc.data 0
+
+scoreboard players set #mc.mouse.rot_y mc.data 0
+scoreboard players set #mc.mouse.old_rot_y mc.data 0
 
 scoreboard players set #mc.input.old_rot_x mc.data 0
 scoreboard players set #mc.input.old_rot_y mc.data 0
 
-scoreboard players set #mc.input.strength_x mc.data 0
-scoreboard players set #mc.input.strength_y mc.data 0
+scoreboard players set #mc.mouse.strength_x mc.data 0
+scoreboard players set #mc.mouse.strength_y mc.data 0
 scoreboard players set #mc.input.strength mc.data 0
 
-scoreboard players set #mc.input.diff_x mc.data 0
-scoreboard players set #mc.input.diff_y mc.data 0
+scoreboard players set #mc.mouse.strength_x mc.data 0
+scoreboard players set #mc.mouse.strength_y mc.data 0
 
-# function mc:main/gui/kill/all
-# execute as @a on vehicle at @s run function mc:modules/included/elements/test
+function mc:main/gui/kill/all
+execute as @a on vehicle at @s run function mc:modules/included/elements/test
 
 function mc:main/inputs/sensibility/default
