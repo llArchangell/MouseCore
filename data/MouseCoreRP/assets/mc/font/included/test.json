@@ -1,0 +1,24 @@
+{
+  "providers": [
+    {"file": "mc:font/included/test0.png",
+    "chars":["\uE000"],
+    "height": 48,
+    "ascent": 0,
+    "type": "bitmap"},
+    {"file": "mc:font/included/test1.png",
+    "chars":["\uE001"],
+    "height": 48,
+    "ascent": 0,
+    "type": "bitmap"},
+    {"file": "mc:font/included/test2.png",
+    "chars":["\uE002"],
+    "height": 48,
+    "ascent": 0,
+    "type": "bitmap"},
+    {"file": "mc:font/included/test3.png",
+    "chars":["\uE003"],
+    "height": 48,
+    "ascent": 0,
+    "type": "bitmap"}
+  ]
+}

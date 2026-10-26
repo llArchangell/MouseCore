@@ -1,0 +1,9 @@
+{
+  "providers": [
+    {"file": "mc:font/included/background_generic.png",
+    "chars":["\uE000"],
+    "height": 1,
+    "ascent": -1,
+    "type": "bitmap"}
+  ]
+}

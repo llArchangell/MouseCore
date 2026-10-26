@@ -1,0 +1,29 @@
+{
+  "providers": [
+    {"file": "mc:font/included/cursor/generic.png",
+    "chars":["\uE000"],
+    "height": 256,
+    "ascent": 32,
+    "type": "bitmap"},
+    {"file": "mc:font/included/cursor/interact.png",
+    "chars":["\uE001"],
+    "height": 256,
+    "ascent": 32,
+    "type": "bitmap"},
+    {"file": "mc:font/included/cursor/drag.png",
+    "chars":["\uE002"],
+    "height": 256,
+    "ascent": 32,
+    "type": "bitmap"},
+    {"file": "mc:font/included/cursor/dragging.png",
+    "chars":["\uE003"],
+    "height": 256,
+    "ascent": 32,
+    "type": "bitmap"},
+    {"file": "mc:font/included/cursor/test.png",
+    "chars":["\uE004t"],
+    "height": 256,
+    "ascent": 32,
+    "type": "bitmap"}
+  ]
+}
