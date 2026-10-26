@@ -54,6 +54,9 @@ scoreboard players set #mc.input.strength mc.data 0
 scoreboard players set #mc.mouse.strength_x mc.data 0
 scoreboard players set #mc.mouse.strength_y mc.data 0
 
+scoreboard players set #mc.left_click mc.data 0
+scoreboard players set #mc.right mc.data 0
+
 function mc:main/gui/kill/all
 execute as @a on vehicle at @s run function mc:modules/included/elements/welcome
 
